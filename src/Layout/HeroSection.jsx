@@ -29,12 +29,8 @@ function MobileHero() {
             <span className="font-text text-2xl font-bold mr-2">Free Quote</span>
           </button>
         </div>
-        <div className="h-24">
-          
-        </div>
       </div>
     </>
   );
 }
-
 export default MobileHero;
