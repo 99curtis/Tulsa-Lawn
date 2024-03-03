@@ -1,8 +1,9 @@
 import React from "react";
+import LazyLoad from "react-lazy-load";
 import { FaQuoteLeft } from "react-icons/fa";
-import Review2 from "../assets/Review1.jpg";
-import Review1 from "../assets/Review2.jpg";
-import Review3 from "../assets/Review3.jpg";
+import Review2 from "../assets/Review1@2x.jpg";
+import Review1 from "../assets/Review2@2x.jpg";
+import Review3 from "../assets/Review3@2x.jpg";
 
 function Reviews() {
   const reviews = [
@@ -35,16 +36,18 @@ function Reviews() {
       {reviews.map((review, index) => (
         <div
           key={index}
-          className="relative mx-10 mt-10 h-fit rounded-3xl border-2 border-background"
-          style={{
-            backgroundImage: `url(${review.image})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
+          className="relative mx-10 mt-10 rounded-3xl border-2 border-background"
         >
+          <LazyLoad offset={100}>
+            <img
+              src={review.image}
+              alt="Review background"
+              className="absolute inset-0 w-full h-full object-cover z-0 rounded-3xl"
+            />
+          </LazyLoad>
           <div className="absolute inset-0 bg-black bg-opacity-60 rounded-3xl"></div>
           <FaQuoteLeft className="absolute top-2 left-6 -translate-y-1/2 rounded-full bg-primary p-4 text-6xl text-background" />
-          <div className="relative px-5 py-5 font-text">
+          <div className="relative z-10 p-5 font-text">
             <div className="mt-8 text-xl font-bold italic text-background">
               {review.text}
             </div>

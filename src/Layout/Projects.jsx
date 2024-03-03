@@ -1,18 +1,19 @@
 import React, { useState } from "react";
 import { useSwipeable } from "react-swipeable";
+import LazyLoad from "react-lazy-load";
 
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-import LawnExample1 from "../assets/LawnExample1.jpg";
-import LawnExample2 from "../assets/LawnExample2.jpg";
-import LawnExample3 from "../assets/LawnExample3.jpg";
-import LawnExample4 from "../assets/LawnExample4.jpg";
-import LawnExample5 from "../assets/LawnExample5.jpg";
-import LawnExample6 from "../assets/LawnExample6.jpg";
-import LawnExample7 from "../assets/LawnExample7.jpg";
-import LawnExample8 from "../assets/LawnExample8.jpg";
-import LawnExample9 from "../assets/LawnExample9.jpg";
-import LawnExample10 from "../assets/LawnExample10.jpg";
+import LawnExample1 from "../assets/LawnExample1@2x.jpg";
+import LawnExample2 from "../assets/LawnExample2@2x.jpg";
+import LawnExample3 from "../assets/LawnExample3@2x.jpg";
+import LawnExample4 from "../assets/LawnExample4@2x.jpg";
+import LawnExample5 from "../assets/LawnExample5@2x.jpg";
+import LawnExample6 from "../assets/LawnExample6@2x.jpg";
+import LawnExample7 from "../assets/LawnExample7@2x.jpg";
+import LawnExample8 from "../assets/LawnExample8@2x.jpg";
+import LawnExample9 from "../assets/LawnExample9@2x.jpg";
+import LawnExample10 from "../assets/LawnExample10@2x.jpg";
 
 function Portfolio() {
   const images = [
@@ -62,11 +63,13 @@ function Portfolio() {
         </div>
       </div>
       <div className="relative flex h-[400px] w-full p-5" {...handlers}>
-        <img
-          src={images[currentImageIndex]}
-          alt="portfolio"
-          className="h-full w-full rounded-lg object-cover"
-        />
+        <LazyLoad offset={100} height={400} width="100%">
+          <img
+            src={images[currentImageIndex]}
+            alt="portfolio"
+            className="h-full w-full rounded-lg object-cover"
+          />
+        </LazyLoad>
         <FaChevronLeft
           onClick={handlePrevClick}
           className="absolute left-3 top-1/2 -translate-y-1/2 cursor-pointer rounded-full text-6xl text-background"
@@ -76,7 +79,7 @@ function Portfolio() {
           className="cursur-pointer absolute right-3 top-1/2 -translate-y-1/2 rounded-full text-6xl text-background"
         />
       </div>
-      <div className="h-20"></div>
+      <div className="h-24"></div>
     </>
   );
 }

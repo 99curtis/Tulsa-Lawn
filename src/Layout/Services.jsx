@@ -2,7 +2,7 @@ import residentualIcon from "../assets/residentual_icon.png";
 import commercialIcon from "../assets/commercial_icon.png";
 import leafIcon from "../assets/leafremoval_icon.png";
 import hedgeIcon from "../assets/hedgetrimming_icon.png";
-
+import LazyLoad from "react-lazy-load";
 
 function ServiceCards() {
   return (
@@ -22,10 +22,11 @@ function ServiceCards() {
           </div>
 
           <div className="flex h-full w-full items-center">
-            <div
-              style={{ backgroundImage: `url(${residentualIcon})` }}
-              className="ml-2 h-[105px] w-1/4 items-center overflow-hidden bg-contain bg-center bg-no-repeat"
-            ></div>
+            <div className="ml-2 h-[105px] w-1/4 items-center overflow-hidden bg-contain bg-center bg-no-repeat">
+              <LazyLoad offset={100}>
+                <img src={residentualIcon} alt="" />
+              </LazyLoad>
+            </div>
 
             <div className="mr-1 flex h-full w-3/4 items-center px-1 text-end font-text text-sm">
               Cultivating lush lawns across Tulsa, our comprehensive care
@@ -49,9 +50,12 @@ function ServiceCards() {
               custom care for a standout business presence.
             </div>
             <div
-              style={{ backgroundImage: `url(${commercialIcon})` }}
               className="mr-2 h-[105px] w-1/4 scale-x-[-1] items-center overflow-hidden bg-contain bg-center bg-no-repeat"
-            ></div>
+            >
+              <LazyLoad offset={100}>
+                <img src={commercialIcon} alt="" />
+              </LazyLoad>
+            </div>
           </div>
         </div>
 
@@ -63,10 +67,11 @@ function ServiceCards() {
           </div>
 
           <div className="flex h-full w-full items-center">
-            <div
-              style={{ backgroundImage: `url(${leafIcon})` }}
-              className="ml-2 h-[105px] w-1/4 items-center overflow-hidden bg-contain bg-center bg-no-repeat"
-            ></div>
+            <div className="ml-2 h-[105px] w-1/4 items-center overflow-hidden bg-contain bg-center bg-no-repeat">
+              <LazyLoad offset={100}>
+                <img src={leafIcon} alt="" />
+              </LazyLoad>
+            </div>
 
             <div className="mr-1 flex h-full w-3/4 items-center px-1 text-end font-text text-sm">
               Enhance your outdoor space with our efficient leaf removal
@@ -76,29 +81,31 @@ function ServiceCards() {
           </div>
         </div>
 
-        
-
-        <div className="mr-4 mt-5 flex h-[200px] w-fit flex-col overflow-hidden rounded-br-[50px] rounded-tl-[50px] border-2 border-primary border-opacity-50 bg-background transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:cursor-pointer hover:border-opacity-100 hover:bg-primary hover:bg-opacity-10">
-          <div className="flex w-full justify-end">
-            <div className="mr-5 pl-1 text-center font-text text-xl font-bold text-primary">
-              HEDGE TRIMMING
+        <div className="ml-4 mt-5 flex h-[200px] w-fit flex-col overflow-hidden rounded-bl-[50px] rounded-tr-[50px] border-2 border-primary border-opacity-50 bg-background transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:cursor-pointer hover:border-opacity-100 hover:bg-primary hover:bg-opacity-10">
+          <div className="flex w-full justify-start">
+            <div className="ml-5 pl-1 text-center font-text text-xl font-bold text-primary">
+            HEDGE TRIMMING
             </div>
           </div>
 
           <div className="flex h-full w-full items-center">
-            <div
-              style={{ backgroundImage: `url(${hedgeIcon})` }}
-              className="ml-2 h-[105px] w-1/4 items-center overflow-hidden bg-contain bg-center bg-no-repeat"
-            ></div>
-
-            <div className="mr-1 flex h-full w-3/4 items-center px-1 text-end font-text text-sm">
-              Experience precision with our hedge trimming service. We sculpt
+            <div className="ml-1 flex h-full w-3/4 items-center px-1 text-start font-text text-sm">
+            Experience precision with our hedge trimming service. We sculpt
               and shape your hedges to perfection, providing a clean, defined
               look that complements your property's aesthetic.
             </div>
+            <div
+              className="mr-2 h-[105px] w-1/4 scale-x-[-1] items-center overflow-hidden bg-contain bg-center bg-no-repeat"
+            >
+              <LazyLoad offset={100}>
+                <img src={hedgeIcon} alt="" />
+              </LazyLoad>
+            </div>
           </div>
         </div>
-        <div className="h-24"></div>
+
+      
+        <div className="h-20"></div>
       </div>
     </>
   );
