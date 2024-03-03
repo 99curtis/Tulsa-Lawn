@@ -29,17 +29,17 @@ function Footer() {
           <div className="pt-4 text-2xl font-bold">Connect</div>
           <div className="flex justify-end gap-3 pt-1 text-4xl">
             <div>
-              <a href="http://www.facebook.com" target="_blank">
+              <a href="http://www.facebook.com" target="_blank" aria-label="Tulsa Lawn Facebook">
                 <FaSquareFacebook />
               </a>
             </div>
             <div>
-              <a href="http://www.instagram.com" target="_blank">
+              <a href="http://www.instagram.com" target="_blank" aria-label="Tulsa Lawn Instagram">
                 <FaSquareInstagram />
               </a>
             </div>
             <div>
-              <a href="http://www.twitter.com" target="_blank">
+              <a href="http://www.twitter.com" target="_blank" aria-label="Tulsa Lawn Twitter">
                 <FaSquareXTwitter />
               </a>
             </div>

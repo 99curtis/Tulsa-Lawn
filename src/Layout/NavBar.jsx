@@ -43,6 +43,7 @@ function NavBar() {
         <button
           onClick={toggleMenu}
           className="rounded-lg bg-primary p-3 text-accent shadow-md"
+          aria-label="Toggle menu visibility"
         >
           {isMenuVisible ? (
             <GrClose size={24} className="text-3xl" />
