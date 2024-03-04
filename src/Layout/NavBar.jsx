@@ -15,18 +15,22 @@ function NavBar() {
   const { isMenuVisible, toggleMenu } = useMenu();
 
   useEffect(() => {
-    // Prevent scrolling when the menu is open
-    if (isMenuVisible) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-
-    // Optional: Clean up function to ensure the overflow is reset
-    // This can be useful if the component unmounts for any reason
-    return () => {
-      document.body.style.overflow = "auto";
+    const handleOverflow = () => {
+      if (isMenuVisible) {
+        document.body.classList.add("overflow-hidden");
+      } else {
+        document.body.classList.remove("overflow-hidden");
+      }
     };
+
+    // Call the function initially to set the state on render
+    handleOverflow();
+
+    // Add event listener to handle menu toggle interaction
+    window.addEventListener("click", handleOverflow);
+
+    // Cleanup function to remove the event listener
+    return () => window.removeEventListener("click", handleOverflow);
   }, [isMenuVisible]);
 
   // Define a base style for the falling animation
@@ -75,6 +79,7 @@ function NavBar() {
               to="/Tulsa-Lawn/services/residential-lawn"
               style={isMenuVisible ? fallingStyle(750) : {}}
               className="flex flex-col items-center justify-center rounded-3xl border-2 border-text bg-background"
+              onClick={() => toggleMenu()}
             >
               <div className="pt-1 text-center font-text text-base font-bold text-primary">
                 RESIDENTIAL LAWN
@@ -91,6 +96,7 @@ function NavBar() {
               to="/Tulsa-Lawn/services/commercial-lawn"
               style={isMenuVisible ? fallingStyle(750) : {}}
               className="flex flex-col items-center justify-center rounded-3xl border-2 border-text bg-background"
+              onClick={() => toggleMenu()}
             >
               <div className="pt-1 text-center font-text text-base font-bold text-primary">
                 COMMERCIAL LAWN
@@ -110,6 +116,7 @@ function NavBar() {
               to="/Tulsa-Lawn/services/hedge-trimming"
               style={isMenuVisible ? fallingStyle(900) : {}}
               className="flex flex-col items-center justify-center rounded-3xl border-2 border-text bg-background"
+              onClick={() => toggleMenu()}
             >
               <div className="pt-1 text-center font-text text-base font-bold text-primary">
                 HEDGE TRIMMING
@@ -126,6 +133,7 @@ function NavBar() {
               to="/Tulsa-Lawn/services/leaf-removal"
               style={isMenuVisible ? fallingStyle(900) : {}}
               className="flex flex-col items-center justify-center rounded-3xl border-2 border-text bg-background"
+              onClick={() => toggleMenu()}
             >
               <div className="pt-1 text-center font-text text-base font-bold text-primary">
                 LEAF REMOVAL
@@ -137,7 +145,6 @@ function NavBar() {
                 ></div>
               </div>
             </Link>
-
           </div>
 
           <div
@@ -152,7 +159,11 @@ function NavBar() {
             style={isMenuVisible ? fallingStyle(1050) : {}}
             className="mx-2 mt-2 grid h-1/4 grid-cols-2 gap-2"
           >
-            <Link to="/Tulsa-Lawn/past-projects" className="relative rounded-3xl">
+            <Link
+              to="/Tulsa-Lawn/past-projects"
+              className="relative rounded-3xl"
+              onClick={() => toggleMenu()}
+            >
               <div
                 style={{ backgroundImage: `url(${LawnExample})` }}
                 className="absolute inset-0 rounded-3xl border-2 border-text bg-cover bg-center"
@@ -167,7 +178,11 @@ function NavBar() {
                 PAST PROJECTS
               </div>
             </Link>
-            <Link to="/Tulsa-Lawn/about" className="relative rounded-3xl">
+            <Link
+              to="/Tulsa-Lawn/about"
+              className="relative rounded-3xl"
+              onClick={() => toggleMenu()}
+            >
               <div
                 style={{ backgroundImage: `url(${MeetTheTeam})` }}
                 className="absolute inset-0 rounded-3xl border-2 border-text bg-cover bg-center"
@@ -182,7 +197,6 @@ function NavBar() {
                 ABOUT US
               </div>
             </Link>
-
           </div>
 
           <div className="flex h-[26svh] items-center justify-center">
