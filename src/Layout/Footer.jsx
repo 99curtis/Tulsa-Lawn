@@ -48,15 +48,10 @@ function Footer() {
       </div>
       <div className="ml-[5%] mt-2 h-[1px] w-[90%] bg-background"></div>
 
-      <div className="mt-2 flex items-center justify-between px-1">
+      <div className="flex items-center justify-around p-4">
         <a href="/privacy-policy" target="_blank" className="text-xs hover:underline">
           Privacy Policy
         </a>
-        <div className="font-logo text-3xl">
-          <a href="/" className="text-current">
-            TULSA LAWN
-          </a>
-        </div>
         <a href="/terms-of-use" target="_blank" className="text-xs hover:underline">
           Terms of Use
         </a>
