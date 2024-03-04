@@ -72,7 +72,7 @@ function NavBar() {
         <div className="h-full">
           <div className="grid h-2/5 grid-cols-2 gap-1 p-2">
             <Link
-              to="/Tulsa-Lawn/services"
+              to="/Tulsa-Lawn/services/residential-lawn"
               style={isMenuVisible ? fallingStyle(750) : {}}
               className="flex flex-col items-center justify-center rounded-3xl border-2 border-text bg-background"
             >
@@ -88,7 +88,7 @@ function NavBar() {
             </Link>
 
             <Link
-              to="/Tulsa-Lawn/services"
+              to="/Tulsa-Lawn/services/commercial-lawn"
               style={isMenuVisible ? fallingStyle(750) : {}}
               className="flex flex-col items-center justify-center rounded-3xl border-2 border-text bg-background"
             >
@@ -107,7 +107,7 @@ function NavBar() {
             </Link>
 
             <Link
-              to="/Tulsa-Lawn/services"
+              to="/Tulsa-Lawn/services/hedge-trimming"
               style={isMenuVisible ? fallingStyle(900) : {}}
               className="flex flex-col items-center justify-center rounded-3xl border-2 border-text bg-background"
             >
@@ -123,7 +123,7 @@ function NavBar() {
             </Link>
 
             <Link
-              to="/Tulsa-Lawn/services"
+              to="/Tulsa-Lawn/services/leaf-removal"
               style={isMenuVisible ? fallingStyle(900) : {}}
               className="flex flex-col items-center justify-center rounded-3xl border-2 border-text bg-background"
             >

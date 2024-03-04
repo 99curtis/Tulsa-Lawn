@@ -1,37 +1,41 @@
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { MenuProvider } from "../Components/MenuContext";
 import NavBar from "../Layout/NavBar";
+import ResidentialLawnService from "../Layout/ResidentialLawnService";
+import CommercialLawnService from "../Layout/CommercialLawnService";
+import HedgeTrimmingService from "../Layout/HedgeTrimmingService";
+import LeafRemovalService from "../Layout/LeafRemovalService";
 
 function ServicesPage() {
-  let { service } = useParams();
+  const location = useLocation();
 
   useEffect(() => {
-    if (service) {
-      setTimeout(() => {
-        const section = document.getElementById(service);
-        if (section) {
-          section.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 500); 
+    const service = location.pathname.split("/").pop(); // Assuming the URL structure /Tulsa-Lawn/services/service-name
+    const section = document.getElementById(service);
+  
+    if (section) {
+      window.requestAnimationFrame(() => {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
     }
-  }, [service]);
+  }, [location]);
 
   return (
     <div className="min-h-screen w-screen overflow-x-hidden bg-background">
       <MenuProvider>
-        <NavBar />
+        <NavBar /> 
         <div id="residential-lawn" className="h-[100vh] bg-secondary">
-          Residential Lawn
+          <ResidentialLawnService />
         </div>
         <div id="commercial-lawn" className="h-[100vh] bg-background">
-          Commercial Lawn
+          <CommercialLawnService />
         </div>
         <div id="hedge-trimming" className="h-[100vh] bg-secondary">
-          Hedge Trimming
+          <HedgeTrimmingService />
         </div>
         <div id="leaf-removal" className="h-[100vh] bg-background">
-          Leaf Removal
+          <LeafRemovalService />
         </div>
       </MenuProvider>
     </div>
