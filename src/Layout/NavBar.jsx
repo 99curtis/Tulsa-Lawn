@@ -53,8 +53,8 @@ function NavBar() {
         </button>
       </div>
       <div
-        style={{ height: `calc(100vh - 5rem)` }}
-        className={`absolute top-20 z-[10] w-screen bg-primary font-text transition-transform duration-500 ease-in-out${
+        style={{ height: `calc(100svh - 5rem)` }}
+        className={`absolute z-[10] w-screen bg-primary font-text transition-transform duration-500 ease-in-out${
           isMenuVisible ? " translate-x-0" : " translate-x-full"
         }`}
       >
@@ -67,7 +67,7 @@ function NavBar() {
 
         <div className="h-full">
 
-          <div className="grid h-1/2 grid-cols-2 gap-1 p-2">
+          <div className="grid h-2/5 grid-cols-2 gap-1 p-2">
 
             <div
               style={isMenuVisible ? fallingStyle(750) : {}}

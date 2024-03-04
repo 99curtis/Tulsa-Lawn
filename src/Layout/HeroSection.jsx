@@ -5,7 +5,7 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 function MobileHero() {
   return (
     <>
-      <div className="relative mx-4 h-[80vh] min-h-[600px] overflow-hidden rounded-3xl bg-cover bg-center">
+      <div className="relative mx-4 h-[80vh] min-h-[600px] overflow-hidden rounded-3xl bg-cover bg-center mt-10">
           <div
             className="z-1 absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url(${heroImage})` }}
