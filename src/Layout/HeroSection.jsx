@@ -1,15 +1,15 @@
-import React from 'react';
+import React from "react";
 import heroImage from "../assets/mobile_hero@2x.jpg";
 import { BsFillTelephoneFill } from "react-icons/bs";
 
 function MobileHero() {
   return (
     <>
-      <div className="relative mx-4 h-[80vh] min-h-[600px] overflow-hidden rounded-3xl bg-cover bg-center mt-10">
-          <div
-            className="z-1 absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${heroImage})` }}
-          />
+      <div className="relative mx-4 mt-10 h-[80vh] min-h-[600px] overflow-hidden rounded-3xl bg-cover bg-center">
+        <div
+          className="z-1 absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroImage})` }}
+        />
         <div className="z-2 absolute inset-0 bg-black bg-opacity-20"></div>
 
         <div className="z-3 absolute flex h-full flex-col justify-around p-2">
@@ -30,12 +30,14 @@ function MobileHero() {
             Transforming Tulsa's lawns with expert care and meticulous attention
             to detail. Experience premier landscaping that sets your space apart
           </div>
-          <button className="mb-2 flex h-fit max-h-[100px] w-fit max-w-[250px] items-center justify-between self-center rounded-lg bg-accent p-4 text-text shadow-2xl">
-            <BsFillTelephoneFill className="mr-4 text-4xl" />
-            <span className="font-text text-[30px] font-bold tracking-tighter">
-              Free Quote
-            </span>
-          </button>
+          <a href="tel:999-999-9999" className="flex items-center justify-center">
+            <button className="mb-2 flex h-fit max-h-[100px] w-fit max-w-[250px] items-center justify-between self-center rounded-lg bg-accent p-4 text-text shadow-2xl">
+              <BsFillTelephoneFill className="mr-4 text-4xl" />
+              <span className="font-text text-[30px] font-bold tracking-tighter">
+                Free Quote
+              </span>
+            </button>
+          </a>
         </div>
       </div>
       <div className="h-20"></div>

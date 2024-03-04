@@ -15,15 +15,15 @@ function NavBar() {
   useEffect(() => {
     // Prevent scrolling when the menu is open
     if (isMenuVisible) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     }
 
     // Optional: Clean up function to ensure the overflow is reset
     // This can be useful if the component unmounts for any reason
     return () => {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     };
   }, [isMenuVisible]);
 
@@ -66,9 +66,7 @@ function NavBar() {
         </div>
 
         <div className="h-full">
-
           <div className="grid h-2/5 grid-cols-2 gap-1 p-2">
-
             <div
               style={isMenuVisible ? fallingStyle(750) : {}}
               className="flex flex-col items-center justify-center rounded-3xl border-2 border-text bg-background"
@@ -176,20 +174,20 @@ function NavBar() {
             </div>
           </div>
 
-          <div className="flex h-1/5 justify-center items-center">
-            <button
-              style={isMenuVisible ? fallingStyle(1200) : {}}
-              className="flex w-fit items-center justify-between rounded-lg bg-accent p-4 text-text shadow-2xl"
-            >
-              <BsFillTelephoneFill className="ml-2 mr-4 size-7" />
-              <span className="mr-2 font-text text-2xl font-bold">
-                Free Quote
-              </span>
-            </button>
+          <div className="flex h-[26svh] items-center justify-center">
+            <a href="tel:999-999-9999">
+              <button
+                style={isMenuVisible ? fallingStyle(1200) : {}}
+                className="flex w-fit items-center justify-between rounded-lg bg-accent p-4 text-text shadow-2xl"
+              >
+                <BsFillTelephoneFill className="ml-2 mr-4 size-7" />
+                <span className="mr-2 font-text text-2xl font-bold">
+                  Free Quote
+                </span>
+              </button>
+            </a>
           </div>
-
         </div>
-
       </div>
 
       <style>
