@@ -8,19 +8,24 @@ import PastProjectsPage from "./pages/PastProjectsPage.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomePage />,
   },
   {
-    path: "/Tulsa-Lawn/" ,
+    path: "/Tulsa-Lawn",
     element: <HomePage />,
   },
   {
     path: "/Tulsa-Lawn/services",
     element: <ServicesPage />,
+    children: [
+      { path: "residential-lawn", element: <ServicesPage /> },
+      { path: "commercial-lawn", element: <ServicesPage /> },
+      { path: "hedge-trimming", element: <ServicesPage /> },
+      { path: "leaf-removal", element: <ServicesPage /> },
+    ],
   },
   {
     path: "/Tulsa-Lawn/about",
