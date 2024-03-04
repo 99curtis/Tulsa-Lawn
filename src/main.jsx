@@ -11,19 +11,23 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
-    path: "/" ,
+    path: "/",
     element: <HomePage />,
   },
   {
-    path: "/services",
+    path: "/Tulsa-Lawn/" ,
+    element: <HomePage />,
+  },
+  {
+    path: "/Tulsa-Lawn/services",
     element: <ServicesPage />,
   },
   {
-    path: "/about",
+    path: "/Tulsa-Lawn/about",
     element: <AboutUsPage />,
   },
   {
-    path: "/past-projects",
+    path: "/Tulsa-Lawn/past-projects",
     element: <PastProjectsPage />,
   },
 ]);

@@ -39,7 +39,7 @@ function NavBar() {
   return (
     <div className="relative w-screen">
       <div className="flex h-20 items-center justify-between border-black px-4">
-        <Link to="/">
+        <Link to="/Tulsa-Lawn/">
           <div className="font-logo text-3xl font-bold text-primary">
             Tulsa Lawn
           </div>
@@ -72,7 +72,7 @@ function NavBar() {
         <div className="h-full">
           <div className="grid h-2/5 grid-cols-2 gap-1 p-2">
             <Link
-              to="/services"
+              to="/Tulsa-Lawn/services"
               style={isMenuVisible ? fallingStyle(750) : {}}
               className="flex flex-col items-center justify-center rounded-3xl border-2 border-text bg-background"
             >
@@ -88,7 +88,7 @@ function NavBar() {
             </Link>
 
             <Link
-              to="/services"
+              to="/Tulsa-Lawn/services"
               style={isMenuVisible ? fallingStyle(750) : {}}
               className="flex flex-col items-center justify-center rounded-3xl border-2 border-text bg-background"
             >
@@ -107,7 +107,7 @@ function NavBar() {
             </Link>
 
             <Link
-              to="/services"
+              to="/Tulsa-Lawn/services"
               style={isMenuVisible ? fallingStyle(900) : {}}
               className="flex flex-col items-center justify-center rounded-3xl border-2 border-text bg-background"
             >
@@ -123,7 +123,7 @@ function NavBar() {
             </Link>
 
             <Link
-              to="/services"
+              to="/Tulsa-Lawn/services"
               style={isMenuVisible ? fallingStyle(900) : {}}
               className="flex flex-col items-center justify-center rounded-3xl border-2 border-text bg-background"
             >
@@ -152,7 +152,7 @@ function NavBar() {
             style={isMenuVisible ? fallingStyle(1050) : {}}
             className="mx-2 mt-2 grid h-1/4 grid-cols-2 gap-2"
           >
-            <Link to="/past-projects" className="relative rounded-3xl">
+            <Link to="/Tulsa-Lawn/past-projects" className="relative rounded-3xl">
               <div
                 style={{ backgroundImage: `url(${LawnExample})` }}
                 className="absolute inset-0 rounded-3xl border-2 border-text bg-cover bg-center"
@@ -167,7 +167,7 @@ function NavBar() {
                 PAST PROJECTS
               </div>
             </Link>
-            <Link to="/about" className="relative rounded-3xl">
+            <Link to="/Tulsa-Lawn/about" className="relative rounded-3xl">
               <div
                 style={{ backgroundImage: `url(${MeetTheTeam})` }}
                 className="absolute inset-0 rounded-3xl border-2 border-text bg-cover bg-center"
