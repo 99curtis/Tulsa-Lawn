@@ -9,6 +9,8 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import MeetTheTeam from "../assets/MeetTheTeam@2x.jpg";
 import LawnExample from "../assets/LawnExample6@2x.jpg";
 
+import { Link } from "react-router-dom";
+
 function NavBar() {
   const { isMenuVisible, toggleMenu } = useMenu();
 
@@ -37,9 +39,11 @@ function NavBar() {
   return (
     <div className="relative w-screen">
       <div className="flex h-20 items-center justify-between border-black px-4">
-        <div className="font-logo text-3xl font-bold text-primary">
-          Tulsa Lawn
-        </div>
+        <Link to="/">
+          <div className="font-logo text-3xl font-bold text-primary">
+            Tulsa Lawn
+          </div>
+        </Link>
         <button
           onClick={toggleMenu}
           className="rounded-lg bg-primary p-3 text-accent shadow-md"
@@ -67,7 +71,8 @@ function NavBar() {
 
         <div className="h-full">
           <div className="grid h-2/5 grid-cols-2 gap-1 p-2">
-            <div
+            <Link
+              to="/services"
               style={isMenuVisible ? fallingStyle(750) : {}}
               className="flex flex-col items-center justify-center rounded-3xl border-2 border-text bg-background"
             >
@@ -80,9 +85,10 @@ function NavBar() {
                   className="ml-2 h-3/5 w-full scale-[1.7] items-center overflow-hidden bg-contain bg-center bg-no-repeat"
                 ></div>
               </div>
-            </div>
+            </Link>
 
-            <div
+            <Link
+              to="/services"
               style={isMenuVisible ? fallingStyle(750) : {}}
               className="flex flex-col items-center justify-center rounded-3xl border-2 border-text bg-background"
             >
@@ -98,9 +104,10 @@ function NavBar() {
                   className="ml-2 h-3/5 w-full items-center overflow-hidden bg-contain bg-center bg-no-repeat"
                 ></div>
               </div>
-            </div>
+            </Link>
 
-            <div
+            <Link
+              to="/services"
               style={isMenuVisible ? fallingStyle(900) : {}}
               className="flex flex-col items-center justify-center rounded-3xl border-2 border-text bg-background"
             >
@@ -113,11 +120,12 @@ function NavBar() {
                   className="ml-2 h-3/5 w-full -translate-y-1 scale-[1.7] items-center overflow-hidden bg-contain bg-center bg-no-repeat"
                 ></div>
               </div>
-            </div>
+            </Link>
 
-            <div
+            <Link
+              to="/services"
               style={isMenuVisible ? fallingStyle(900) : {}}
-              className="flex flex-col items-center rounded-3xl border-2 border-text bg-background"
+              className="flex flex-col items-center justify-center rounded-3xl border-2 border-text bg-background"
             >
               <div className="pt-1 text-center font-text text-base font-bold text-primary">
                 LEAF REMOVAL
@@ -128,8 +136,10 @@ function NavBar() {
                   className="ml-2 h-3/5 w-full -translate-y-1 scale-[1.5] items-center overflow-hidden bg-contain bg-center bg-no-repeat"
                 ></div>
               </div>
-            </div>
+            </Link>
+
           </div>
+
           <div
             style={isMenuVisible ? fallingStyle(900) : {}}
             className="relative h-[5px] w-full"
@@ -142,7 +152,7 @@ function NavBar() {
             style={isMenuVisible ? fallingStyle(1050) : {}}
             className="mx-2 mt-2 grid h-1/4 grid-cols-2 gap-2"
           >
-            <div className="relative rounded-3xl">
+            <Link to="/past-projects" className="relative rounded-3xl">
               <div
                 style={{ backgroundImage: `url(${LawnExample})` }}
                 className="absolute inset-0 rounded-3xl border-2 border-text bg-cover bg-center"
@@ -156,8 +166,8 @@ function NavBar() {
               >
                 PAST PROJECTS
               </div>
-            </div>
-            <div className="relative rounded-3xl">
+            </Link>
+            <Link to="/about" className="relative rounded-3xl">
               <div
                 style={{ backgroundImage: `url(${MeetTheTeam})` }}
                 className="absolute inset-0 rounded-3xl border-2 border-text bg-cover bg-center"
@@ -171,7 +181,8 @@ function NavBar() {
               >
                 ABOUT US
               </div>
-            </div>
+            </Link>
+
           </div>
 
           <div className="flex h-[26svh] items-center justify-center">

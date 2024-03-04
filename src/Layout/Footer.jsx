@@ -3,6 +3,7 @@ import {
   FaSquareFacebook,
   FaSquareInstagram,
 } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -49,12 +50,12 @@ function Footer() {
       <div className="ml-[5%] mt-2 h-[1px] w-[90%] bg-background"></div>
 
       <div className="flex items-center justify-around p-4">
-        <a href="/privacy-policy" target="_blank" className="text-xs hover:underline">
+        <Link to="/privacy-policy" target="_blank" className="text-xs hover:underline">
           Privacy Policy
-        </a>
-        <a href="/terms-of-use" target="_blank" className="text-xs hover:underline">
+        </Link>
+        <Link to="/terms-of-use" target="_blank" className="text-xs hover:underline">
           Terms of Use
-        </a>
+        </Link>
       </div>
     </div>
   );
