@@ -10,7 +10,9 @@ function ServiceCards() {
     <>
       <div className="bg-secondary">
         <div className="flex h-fit flex-col items-center px-5 pt-20 font-text text-text">
-          <div className="text-2xl font-bold">Services</div>
+          <Link to="/Tulsa-Lawn/services">
+            <div className="text-2xl font-bold">Services</div>
+          </Link>
           <div className="mb-10 text-center text-xs">
             Expert care, affordable pricing, and a commitment to excellence
           </div>

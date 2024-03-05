@@ -66,12 +66,14 @@ function NavBar() {
           isMenuVisible ? " translate-x-0" : " translate-x-full"
         }`}
       >
-        <div
-          style={isMenuVisible ? fallingStyle(500) : {}}
-          className="mb-[-10px] mt-1 w-screen text-center text-2xl text-background"
-        >
-          SERVICES
-        </div>
+        <Link to="/Tulsa-Lawn/services" onClick={() => toggleMenu()}>
+          <div
+            style={isMenuVisible ? fallingStyle(500) : {}}
+            className="mb-[-10px] mt-1 w-screen text-center text-2xl text-background"
+          >
+            SERVICES
+          </div>
+        </Link>
 
         <div className="h-full">
           <div className="grid h-2/5 grid-cols-2 gap-1 p-2">
