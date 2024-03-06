@@ -1,1 +1,0 @@
-import{j as e,M as s,N as r}from"./index-nrubGsfP.js";function n(){return e.jsx("div",{className:"bg-background min-h-screen w-screen overflow-x-hidden",children:e.jsxs(s,{children:[e.jsx(r,{}),e.jsx("div",{children:"Past Projects"})]})})}export{n as default};
