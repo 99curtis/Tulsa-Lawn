@@ -9,7 +9,6 @@ import LawnExample4 from "../assets/leafremoval4.webp";
 import LawnExample5 from "../assets/leafremoval5.webp";
 import LawnExample6 from "../assets/leafremoval6.webp";
 
-
 import LeafIcon from "../assets/leafremoval_icon.png";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
@@ -20,7 +19,6 @@ const images = [
   LawnExample4,
   LawnExample5,
   LawnExample6,
-
 ];
 
 function LeafRemovalService() {
@@ -51,7 +49,7 @@ function LeafRemovalService() {
 
   return (
     <div className="h-full overflow-hidden p-4 font-text text-text">
-      <div className="flex h-[10%] items-center justify-between text-3xl font-bold">
+      <div className="flex h-[13%] items-center justify-between text-3xl font-bold">
         <div className="h-full w-1/2 ">
           Leaf
           <br />
@@ -67,13 +65,11 @@ function LeafRemovalService() {
       </div>
 
       <div className="flex h-[35%] flex-col justify-between rounded-3xl bg-secondary p-2">
-        <div className="px-2">
-          Our leaf removal service is designed for efficiency and thoroughness,
-          ensuring your outdoor spaces are free from clutter and looking their
-          best. With our expertise, we swiftly clear away fallen leaves,
-          enhancing the beauty and health of your lawn and garden. Choose our
-          services for a pristine, well-maintained outdoor area that welcomes
-          you and your guests.
+        <div className="text- px-2 leading-tight">
+          Efficiently clear your outdoor spaces of leaf clutter with our leaf
+          removal service. Our fast and thorough approach enhances your lawn's
+          beauty and health, ensuring a pristine environment for you and your
+          guests.
         </div>
         <div className="text-center text-xs font-bold">
           Pricing starts at $50/yard or $150/lot

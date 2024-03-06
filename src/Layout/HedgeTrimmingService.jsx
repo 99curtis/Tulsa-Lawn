@@ -9,7 +9,6 @@ import LawnExample4 from "../assets/hedgetrimming4.webp";
 import LawnExample5 from "../assets/hedgetrimming5.webp";
 import LawnExample6 from "../assets/hedgetrimming6.webp";
 
-
 import HedgeIcon from "../assets/hedgetrimming_icon.png";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
@@ -50,7 +49,7 @@ function HedgeTrimmingService() {
 
   return (
     <div className="h-full overflow-hidden p-4 font-text text-text">
-      <div className="flex h-[10%] items-center justify-between text-3xl font-bold">
+      <div className="flex h-[13%] items-center justify-between text-3xl font-bold">
         <div className="h-full w-1/2">
           Hedge
           <br />
@@ -66,12 +65,10 @@ function HedgeTrimmingService() {
       </div>
 
       <div className="flex h-[35%] flex-col justify-between rounded-3xl bg-background p-2">
-        <div className="px-2">
-          Our hedge trimming services stand out for their precision and
-          attention to detail, ensuring your hedges are perfectly sculpted and
-          thriving. We tailor our approach to highlight your landscape's natural
-          beauty, creating a refined and welcoming environment. Opt for our
-          expertise to bring out the best in your garden's appearance.
+        <div className="px-2 leading-tight">
+          Our hedge trimming services offer precision and detail, sculpting your
+          hedges to perfection. We enhance your landscape's natural beauty,
+          creating an inviting and refined space for everyone to enjoy.
         </div>
         <div className="text-center text-xs font-bold">
           Pricing starts at $60/lot or $50/monthly

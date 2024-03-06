@@ -9,7 +9,6 @@ import LawnExample4 from "../assets/commercial4.webp";
 import LawnExample5 from "../assets/commercial5.webp";
 import LawnExample6 from "../assets/commercial6.webp";
 
-
 import CommercialIcon from "../assets/commercial_icon.png";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
@@ -20,7 +19,6 @@ const images = [
   LawnExample4,
   LawnExample5,
   LawnExample6,
-
 ];
 
 function CommercialLawnService() {
@@ -51,23 +49,23 @@ function CommercialLawnService() {
 
   return (
     <div className="h-full overflow-hidden p-4 font-text text-text">
-      <div className="flex h-[10%] items-center justify-between text-3xl font-bold">
-        <div className="h-full w-1/2 ">
-          Commercial Lawn Care
-        </div>
-        <div className="h-full w-1/2 bg-contain flex justify-end">
-          <img src={CommercialIcon} alt="" className="h-max w-[58%] object-cover scale-x-[-1] -translate-y-5" />
+      <div className="flex h-[13%] items-center justify-between text-3xl font-bold">
+        <div className="h-full w-1/2 ">Commercial Lawn Care</div>
+        <div className="flex h-full w-1/2 justify-end bg-contain">
+          <img
+            src={CommercialIcon}
+            alt=""
+            className="h-max w-[58%] -translate-y-5 scale-x-[-1] object-cover"
+          />
         </div>
       </div>
 
       <div className="flex h-[35%] flex-col justify-between rounded-3xl bg-secondary p-2">
-        <div className="px-2">
-          We specialize in superior commercial lawn care, delivering expert
-          mowing, precise edging, and essential fertilization to enhance your
-          business's outdoor appeal. Our tailored solutions ensure your property
-          remains immaculate, reflecting your company's professionalism. Trust
-          us to transform your commercial landscape into a pristine, inviting
-          space.
+        <div className="px-2 leading-tight">
+          Specializing in commercial lawn maintenance, we provide expert mowing,
+          precise edging, and essential fertilization to boost your business
+          facade. Our solutions keep your property looking professional and
+          immaculate, mirroring the high standards of your company.
         </div>
         <div className="text-center text-xs font-bold">
           Pricing starts at $100/lot or $80/weekly

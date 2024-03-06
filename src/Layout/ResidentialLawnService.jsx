@@ -19,7 +19,6 @@ const images = [
   LawnExample4,
   LawnExample5,
   LawnExample6,
-
 ];
 
 function ResidentialLawnService() {
@@ -50,7 +49,7 @@ function ResidentialLawnService() {
 
   return (
     <div className="h-full overflow-hidden p-4 font-text text-text">
-      <div className="flex h-[10%] items-center justify-between text-3xl font-bold">
+      <div className="flex h-[13%] items-center justify-between text-3xl font-bold">
         <div className="h-full w-1/2">Residential Lawn Care</div>
         <div className="flex h-full w-1/2 justify-end bg-contain">
           <img
@@ -62,12 +61,11 @@ function ResidentialLawnService() {
       </div>
 
       <div className="flex h-[35%] flex-col justify-between rounded-3xl bg-background p-2">
-        <div className="px-2">
-          We excel in top-notch residential lawn care, offering detailed mowing,
-          precise edging, and essential fertilization to keep your outdoor space
-          lush and vibrant. Beyond the basics, our specialized care meets your
-          lawn's unique needs, transforming it into a beautiful, healthy
-          retreat. Choose us for a lawn that's cherished, not just maintained.
+        <div className="px-2 leading-tight">
+          Our residential lawn care excels in delivering detailed mowing,
+          precise edging, and targeted fertilization, ensuring your garden
+          remains lush and vibrant. With our specialized attention, we transform
+          your outdoor area into a cherished, healthy retreat that stands out.
         </div>
         <div className="text-center text-xs font-bold">
           Pricing starts at $40/yard or $30/weekly
