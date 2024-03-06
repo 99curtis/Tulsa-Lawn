@@ -84,7 +84,7 @@ function LeafRemovalService() {
         past leaf removal projects
       </div>
       <div className="relative flex h-1/2 w-full px-2 pb-6" {...handlers}>
-        <LazyLoad offset={100} width="100%">
+        <LazyLoad offset={100} width="100%" height="100%" threshold={0.95}>
           <img
             src={images[currentImageIndex]}
             alt="portfolio"

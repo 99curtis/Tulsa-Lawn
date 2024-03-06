@@ -22,7 +22,7 @@ const images = [
 
 ];
 
-function CommercialLawnService() {
+function ResidentialLawnService() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const handlers = useSwipeable({
@@ -98,4 +98,4 @@ function CommercialLawnService() {
   );
 }
 
-export default CommercialLawnService;
+export default ResidentialLawnService;

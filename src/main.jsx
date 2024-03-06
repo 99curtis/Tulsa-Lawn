@@ -1,13 +1,16 @@
-import React from "react";
-import { createRoot } from "react-dom/client"; // Corrected import statement
+import React, { Suspense } from "react";
+import { createRoot } from "react-dom/client";
 import HomePage from "./pages/HomePage.jsx";
-import ServicesPage from "./pages/ServicesPage.jsx";
-import AboutUsPage from "./pages/AboutUsPage.jsx";
-import PastProjectsPage from "./pages/PastProjectsPage.jsx";
-import ResidentialLawnService from "./Layout/ResidentialLawnService.jsx";
-import CommercialLawnService from "./Layout/CommercialLawnService.jsx";
-import HedgeTrimmingService from "./Layout/HedgeTrimmingService.jsx";
-import LeafRemovalService from "./Layout/LeafRemovalService.jsx";
+
+const LazyResidentialLawnService = React.lazy(() => import("./Layout/ResidentialLawnService.jsx"));
+const LazyCommercialLawnService = React.lazy(() => import("./Layout/CommercialLawnService.jsx"));
+const LazyHedgeTrimmingService = React.lazy(() => import("./Layout/HedgeTrimmingService.jsx"));
+const LazyLeafRemovalService = React.lazy(() => import("./Layout/LeafRemovalService.jsx"));
+const LazyServicesPage = React.lazy(() => import("./pages/ServicesPage.jsx"));
+const LazyAboutUsPage = React.lazy(() => import("./pages/AboutUsPage.jsx"));
+const LazyProjectsPage = React.lazy(
+  () => import("./pages/PastProjectsPage.jsx"),
+);
 
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -23,21 +26,41 @@ const router = createBrowserRouter([
   },
   {
     path: "/Tulsa-Lawn/services",
-    element: <ServicesPage />,
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <LazyServicesPage />
+      </Suspense>
+    ),
     children: [
-      { path: "residential-lawn", element: <ResidentialLawnService /> },
-      { path: "commercial-lawn", element: <CommercialLawnService /> },
-      { path: "hedge-trimming", element: <HedgeTrimmingService /> },
-      { path: "leaf-removal", element: <LeafRemovalService /> },
+      { path: "residential-lawn", element: <Suspense fallback={<div>Loading...</div>}>
+      <LazyResidentialLawnService />
+    </Suspense> },
+      { path: "commercial-lawn", element: <Suspense fallback={<div>Loading...</div>}>
+      <LazyCommercialLawnService />
+    </Suspense> },
+      { path: "hedge-trimming", element: <Suspense fallback={<div>Loading...</div>}>
+      <LazyHedgeTrimmingService />
+    </Suspense> },
+      { path: "leaf-removal", element: <Suspense fallback={<div>Loading...</div>}>
+      <LazyLeafRemovalService />
+    </Suspense> },
     ],
   },
   {
     path: "/Tulsa-Lawn/about",
-    element: <AboutUsPage />,
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <LazyAboutUsPage />
+      </Suspense>
+    ),
   },
   {
     path: "/Tulsa-Lawn/past-projects",
-    element: <PastProjectsPage />,
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <LazyProjectsPage />
+      </Suspense>
+    ),
   },
 ]);
 
@@ -45,5 +68,5 @@ const root = createRoot(document.getElementById("root")); // Use the corrected i
 root.render(
   <React.StrictMode>
     <RouterProvider router={router} />
-  </React.StrictMode>
+  </React.StrictMode>,
 );
