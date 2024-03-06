@@ -59,7 +59,7 @@ function LeafRemovalService() {
           <img
             src={LeafIcon}
             alt=""
-            className="h-max w-[45%] -translate-y-2 scale-x-[-1] object-cover"
+            className="h-full w-[50%] -translate-y-2 scale-x-[-1] bg-cover"
           />
         </div>
       </div>

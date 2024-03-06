@@ -59,7 +59,7 @@ function HedgeTrimmingService() {
           <img
             src={HedgeIcon}
             alt=""
-            className="h-max w-[50%] -translate-y-3 scale-x-[-1] object-cover"
+            className="h-full w-[50%] -translate-y-3 scale-x-[-1] object-cover"
           />
         </div>
       </div>

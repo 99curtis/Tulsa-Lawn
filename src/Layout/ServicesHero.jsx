@@ -7,9 +7,9 @@ import LawnHeroBL from "../assets/LawnHeroBL.webp";
 function ServicesHero() {
   return (
     <div className="relative h-[calc(100vh-5rem)] overflow-hidden">
-      <div className="h-1/5 text-center font-text text-text pt-8">
+      <div className="h-1/4 text-center font-text text-text pt-8">
         <div className="text-4xl font-bold">Services</div>
-        <div>
+        <div className="leading-tight">
           From residential and commerical lawn care, to leaf removal and hedge
           trimming, we've done it all in the Tulsa area for 20 years
         </div>
