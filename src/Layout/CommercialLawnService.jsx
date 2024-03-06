@@ -55,7 +55,7 @@ function CommercialLawnService() {
           <img
             src={CommercialIcon}
             alt=""
-            className="h-full w-[58%] -translate-y-3 scale-x-[-1] object-cover"
+            className="h-[90px] w-[90px] -translate-y-3 scale-x-[-1] object-cover"
           />
         </div>
       </div>
