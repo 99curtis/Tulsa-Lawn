@@ -1,4 +1,4 @@
-import residentualIcon from "../assets/residentual_icon.png";
+import residentualIcon from "../assets/residential_icon.png";
 import commercialIcon from "../assets/commercial_icon.png";
 import leafIcon from "../assets/leafremoval_icon.png";
 import hedgeIcon from "../assets/hedgetrimming_icon.png";

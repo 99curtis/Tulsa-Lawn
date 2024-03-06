@@ -7,7 +7,8 @@ import ResidentialLawnService from "../Layout/ResidentialLawnService";
 import CommercialLawnService from "../Layout/CommercialLawnService";
 import HedgeTrimmingService from "../Layout/HedgeTrimmingService";
 import LeafRemovalService from "../Layout/LeafRemovalService";
-import LazyLoad from "react-lazy-load";
+import Footer from "../Layout/Footer";
+
 
 function ServicesPage() {
   const location = useLocation();
@@ -50,6 +51,7 @@ function ServicesPage() {
         <div id="leaf-removal" className="h-[100vh] bg-background">
           <LeafRemovalService />
         </div>
+        <Footer />
       </MenuProvider>
     </div>
   );
