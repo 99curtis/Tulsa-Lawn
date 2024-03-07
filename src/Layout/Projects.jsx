@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { useSwipeable } from "react-swipeable";
-import LazyLoad from "react-lazy-load";
-
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 import LawnExample1 from "../assets/LawnExample1@2x.jpg";
@@ -15,12 +13,11 @@ import LawnExample8 from "../assets/LawnExample8@2x.jpg";
 import LawnExample9 from "../assets/LawnExample9@2x.jpg";
 import LawnExample10 from "../assets/LawnExample10@2x.jpg";
 
-
 function Portfolio() {
   const images = [
-    LawnExample3,
-    LawnExample2,
     LawnExample1,
+    LawnExample2,
+    LawnExample3,
     LawnExample4,
     LawnExample5,
     LawnExample6,
@@ -29,29 +26,18 @@ function Portfolio() {
     LawnExample9,
     LawnExample10,
   ];
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const handlers = useSwipeable({
-    onSwipedLeft: () =>
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length),
-    onSwipedRight: () =>
-      setCurrentImageIndex(
-        (prevIndex) => (prevIndex - 1 + images.length) % images.length,
-      ),
+    onSwipedLeft: () => setCurrentSlide((prev) => (prev + 1) % images.length),
+    onSwipedRight: () => setCurrentSlide((prev) => (prev - 1 + images.length) % images.length),
     preventDefaultTouchmoveEvent: true,
     trackMouse: true,
   });
 
-  const handlePrevClick = (event) => {
-    event.stopPropagation();
-    setCurrentImageIndex(
-      (prevIndex) => (prevIndex - 1 + images.length) % images.length,
-    );
-  };
-
-  const handleNextClick = (event) => {
-    event.stopPropagation();
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+  const calculateOffset = () => {
+    const slideWidth = 100; // Assuming each slide takes up 100% of the carousel width
+    return `-${currentSlide * slideWidth}%`;
   };
 
   return (
@@ -60,25 +46,30 @@ function Portfolio() {
         <div className="text-center text-2xl font-bold">Projects</div>
         <div className="mb-10 text-center text-xs">
           Any size, any difficulty. Tulsa Lawn has done it all for 20 years, and
-          we will continue to provide only the best
+          we will continue to provide only the best.
         </div>
       </div>
-      <div className="relative flex h-[400px] w-full p-5" {...handlers}>
-        <LazyLoad offset={100} height={400} width="100%">
-          <img
-            src={images[currentImageIndex]}
-            alt="portfolio"
-            className="h-full w-full rounded-lg object-cover"
-          />
-        </LazyLoad>
+      <div className="m-2">
+      <div className="relative flex h-[400px] w-full overflow-hidden border-2 border-black rounded-3xl" {...handlers}>
+        <div className="flex h-full w-full transition-transform duration-500" style={{ transform: `translateX(${calculateOffset()})` }}>
+          {images.map((image, index) => (
+            <img
+              key={index}
+              src={image}
+              alt={`Slide ${index + 1}`}
+              className="min-w-full h-full object-cover flex-shrink-0"
+            />
+          ))}
+        </div>
         <FaChevronLeft
-          onClick={handlePrevClick}
-          className="absolute left-3 top-1/2 -translate-y-1/2 cursor-pointer rounded-full text-6xl text-background"
+          onClick={() => setCurrentSlide((prev) => (prev - 1 + images.length) % images.length)}
+          className="absolute top-1/2 -translate-y-1/2 cursor-pointer rounded-full text-5xl bg-text bg-opacity-60 text-background"
         />
         <FaChevronRight
-          onClick={handleNextClick}
-          className="cursur-pointer absolute right-3 top-1/2 -translate-y-1/2 rounded-full text-6xl text-background"
+          onClick={() => setCurrentSlide((prev) => (prev + 1) % images.length)}
+          className="absolute right-0 top-1/2 -translate-y-1/2 cursor-pointer rounded-full text-5xl bg-text bg-opacity-60 text-background"
         />
+      </div>
       </div>
       <div className="h-24"></div>
     </>

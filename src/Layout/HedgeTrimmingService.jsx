@@ -22,29 +22,18 @@ const images = [
 ];
 
 function HedgeTrimmingService() {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const handlers = useSwipeable({
-    onSwipedLeft: () =>
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length),
-    onSwipedRight: () =>
-      setCurrentImageIndex(
-        (prevIndex) => (prevIndex - 1 + images.length) % images.length,
-      ),
+    onSwipedLeft: () => setCurrentSlide((prev) => (prev + 1) % images.length),
+    onSwipedRight: () => setCurrentSlide((prev) => (prev - 1 + images.length) % images.length),
     preventDefaultTouchmoveEvent: true,
     trackMouse: true,
   });
 
-  const handlePrevClick = (event) => {
-    event.stopPropagation();
-    setCurrentImageIndex(
-      (prevIndex) => (prevIndex - 1 + images.length) % images.length,
-    );
-  };
-
-  const handleNextClick = (event) => {
-    event.stopPropagation();
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+  const calculateOffset = () => {
+    const slideWidth = 100; // Assuming each slide takes up 100% of the carousel width
+    return `-${currentSlide * slideWidth}%`;
   };
 
   return (
@@ -64,7 +53,7 @@ function HedgeTrimmingService() {
         </div>
       </div>
 
-      <div className="flex h-[35%] flex-col justify-between rounded-3xl bg-background p-2">
+      <div className="flex h-[35%] flex-col justify-between rounded-3xl bg-background p-2 border-[1px] border-text">
         <div className="px-2 leading-tight">
           Our hedge trimming services offer precision and detail, sculpting your
           hedges to perfection. We enhance your landscape's natural beauty,
@@ -78,21 +67,25 @@ function HedgeTrimmingService() {
       <div className="flex h-[5%] items-end justify-center font-bold">
         past hedge trimming projects
       </div>
-      <div className="relative flex h-1/2 w-full px-2 pb-6" {...handlers}>
-        <LazyLoad offset={100} width="100%">
-          <img
-            src={images[currentImageIndex]}
-            alt="portfolio"
-            className="h-full w-full rounded-3xl bg-center bg-no-repeat object-cover"
-          />
-        </LazyLoad>
+      <div className="relative flex border-2 h-[45%] border-black w-full overflow-hidden rounded-3xl" {...handlers}>
+        <div className="flex transition-transform duration-500 h-full" style={{ transform: `translateX(${calculateOffset()})` }}>
+          {images.map((image, index) => (
+            <img
+              key={index}
+              src={image}
+              alt={`Hedge Trimming ${index + 1}`}
+              className="h-full w-full object-cover flex-shrink-0" // Ensure images fill the div and are shown side by side
+              style={{ width: '100vw' }} // Adjust as needed to fit your design
+            />
+          ))}
+        </div>
         <FaChevronLeft
-          onClick={handlePrevClick}
-          className="absolute left-3 top-1/2 -translate-y-1/2 cursor-pointer rounded-full text-6xl text-background"
+          onClick={() => setCurrentSlide((prev) => (prev - 1 + images.length) % images.length)}
+          className="absolute top-1/2 -translate-y-1/2 cursor-pointer rounded-full text-5xl bg-text bg-opacity-60 text-background"
         />
         <FaChevronRight
-          onClick={handleNextClick}
-          className="cursur-pointer absolute right-3 top-1/2 -translate-y-1/2 rounded-full text-6xl text-background"
+          onClick={() => setCurrentSlide((prev) => (prev + 1) % images.length)}
+          className="absolute right-0 top-1/2 -translate-y-1/2 cursor-pointer rounded-full text-5xl bg-text bg-opacity-60 text-background"
         />
       </div>
     </div>
