@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <div className="bg-text font-text text-background">
+    <div className="bg-text font-text text-background h-[145px]">
       <div className="flex justify-between">
         <div className="ml-1 ">
           <div className="pt-4 text-2xl font-bold">Contact Us</div>
@@ -16,10 +16,10 @@ function Footer() {
               999-999-9999
             </a>
             <a
-              href="mailto:buisness@tulsalawn.com"
+              href="mailto:business@tulsalawn.com"
               className="block hover:underline"
             >
-              buisness@tulsalawn.com
+              business@tulsalawn.com
             </a>
           </div>
         </div>

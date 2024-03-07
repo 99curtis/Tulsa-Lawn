@@ -36,7 +36,7 @@ function Reviews() {
       {reviews.map((review, index) => (
         <div
           key={index}
-          className="relative mx-10 mt-10 rounded-3xl border-2 border-background"
+          className="relative mx-10 mt-10 rounded-3xl"
         >
           <LazyLoad offset={100}>
             <img
@@ -46,7 +46,7 @@ function Reviews() {
             />
           </LazyLoad>
           <div className="absolute inset-0 bg-black bg-opacity-60 rounded-3xl"></div>
-          <FaQuoteLeft className="absolute top-2 left-6 -translate-y-1/2 rounded-full bg-primary p-4 text-6xl text-background" />
+          <FaQuoteLeft className="absolute top-2 left-6 -translate-y-1/2 rounded-full bg-primary p-4 text-6xl text-background border-2 border-bg" />
           <div className="relative z-10 p-5 font-text">
             <div className="mt-8 text-xl font-bold italic text-background">
               {review.text}
