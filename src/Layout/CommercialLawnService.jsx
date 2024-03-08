@@ -44,7 +44,7 @@ function CommercialLawnService() {
         </div>
       </div>
 
-      <div className="flex h-[35%] flex-col justify-between rounded-3xl bg-background p-2 border-[1px] border-text bg-secondary">
+      <div className="flex h-[35%] flex-col justify-between rounded-3xl p-2 border-[1px] border-text bg-secondary">
         <div className="px-2 leading-tight">
           Specializing in commercial lawn maintenance, we provide expert mowing, precise edging, and essential fertilization to boost your business facade. Our solutions keep your property looking professional and immaculate, mirroring the high standards of your company.
         </div>
