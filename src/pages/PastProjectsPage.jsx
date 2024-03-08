@@ -85,9 +85,9 @@ function PastProjectsPage() {
     <div className="flex min-h-screen w-screen flex-col justify-between overflow-hidden bg-background">
       <MenuProvider>
         <NavBar />
-        <div className="flex h-[75svh] flex-col">
-          <div className="h-[25%]">
-            <div className="pt-3 text-center font-text text-4xl font-bold tracking-tighter text-text">
+        <div className="flex h-[75svh] min-h-[600px] flex-col">
+          <div className="h-[20%]">
+            <div className="pt-1 text-center font-text text-4xl font-bold tracking-tighter text-text">
               PAST PROJECTS
             </div>
             <div className="grid grid-cols-2 gap-2 p-2 text-center font-text text-sm">
@@ -108,7 +108,7 @@ function PastProjectsPage() {
           </div>
 
           {/* Image Carousel */}
-          <div className="h-[70%]">
+          <div className="h-[75%]">
             <div
               className="relative m-2 h-full overflow-hidden rounded-3xl border-2 border-black"
               {...handlers}
