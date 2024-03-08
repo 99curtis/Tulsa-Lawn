@@ -12,6 +12,7 @@ import LawnExample7 from "/assets/LawnExample7@2x.jpg";
 import LawnExample8 from "/assets/LawnExample8@2x.jpg";
 import LawnExample9 from "/assets/LawnExample9@2x.jpg";
 import LawnExample10 from "/assets/LawnExample10@2x.jpg";
+import { Link } from "react-router-dom";
 
 function Portfolio() {
   const images = [
@@ -43,7 +44,9 @@ function Portfolio() {
   return (
     <>
       <div className="mt-20 h-28 px-5 font-text text-text">
+        <Link to="/past-projects">
         <div className="text-center text-2xl font-bold">Projects</div>
+        </Link>
         <div className="mb-10 text-center text-xs">
           Any size, any difficulty. Tulsa Lawn has done it all for 20 years, and
           we will continue to provide only the best.
