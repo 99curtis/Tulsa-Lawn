@@ -1,5 +1,5 @@
 import React from "react";
-import heroImage from "../assets/mobile_hero@2x.jpg";
+import heroImage from "/assets/mobile_hero@2x.jpg";
 import { BsFillTelephoneFill } from "react-icons/bs";
 
 function MobileHero() {

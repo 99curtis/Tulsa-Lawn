@@ -2,16 +2,16 @@ import React, { useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-import LawnExample1 from "../assets/LawnExample1@2x.jpg";
-import LawnExample2 from "../assets/LawnExample2@2x.jpg";
-import LawnExample3 from "../assets/LawnExample3@2x.jpg";
-import LawnExample4 from "../assets/LawnExample4@2x.jpg";
-import LawnExample5 from "../assets/LawnExample5@2x.jpg";
-import LawnExample6 from "../assets/LawnExample6@2x.jpg";
-import LawnExample7 from "../assets/LawnExample7@2x.jpg";
-import LawnExample8 from "../assets/LawnExample8@2x.jpg";
-import LawnExample9 from "../assets/LawnExample9@2x.jpg";
-import LawnExample10 from "../assets/LawnExample10@2x.jpg";
+import LawnExample1 from "/assets/LawnExample1@2x.jpg";
+import LawnExample2 from "/assets/LawnExample2@2x.jpg";
+import LawnExample3 from "/assets/LawnExample3@2x.jpg";
+import LawnExample4 from "/assets/LawnExample4@2x.jpg";
+import LawnExample5 from "/assets/LawnExample5@2x.jpg";
+import LawnExample6 from "/assets/LawnExample6@2x.jpg";
+import LawnExample7 from "/assets/LawnExample7@2x.jpg";
+import LawnExample8 from "/assets/LawnExample8@2x.jpg";
+import LawnExample9 from "/assets/LawnExample9@2x.jpg";
+import LawnExample10 from "/assets/LawnExample10@2x.jpg";
 
 function Portfolio() {
   const images = [

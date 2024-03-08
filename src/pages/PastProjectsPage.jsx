@@ -4,38 +4,37 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import NavBar from "../Layout/NavBar";
 import Footer from "../Layout/Footer";
 import { MenuProvider } from "../Components/MenuContext";
-import { getImageUrl } from "../Components/getImageURL";
 
 
 // Direct imports
 
-const Commercial1 = getImageUrl('commercial1.webp');
-const Commercial2 = getImageUrl('commercial2.webp');
-const Commercial3 = getImageUrl('commercial3.webp');
-const Commercial4 = getImageUrl('commercial4.webp');
-const Commercial5 = getImageUrl('commercial5.webp');
-const Commercial6 = getImageUrl('commercial6.webp');
+import Commercial1 from "/assets/commercial1.webp";
+import Commercial2 from "/assets/commercial2.webp";
+import Commercial3 from "/assets/commercial3.webp";
+import Commercial4 from "/assets/commercial4.webp";
+import Commercial5 from "/assets/commercial5.webp";
+import Commercial6 from "/assets/commercial6.webp";
 
-const Hedge1 = getImageUrl('hedgetrimming1.webp');
-const Hedge2 = getImageUrl('hedgetrimming2.webp');
-const Hedge3 = getImageUrl('hedgetrimming3.webp');
-const Hedge4 = getImageUrl('hedgetrimming4.webp');
-const Hedge5 = getImageUrl('hedgetrimming5.webp');
-const Hedge6 = getImageUrl('hedgetrimming6.webp');
+import Hedge1 from "/assets/hedgetrimming1.webp";
+import Hedge2 from "/assets/hedgetrimming2.webp";
+import Hedge3 from "/assets/hedgetrimming3.webp";
+import Hedge4 from "/assets/hedgetrimming4.webp";
+import Hedge5 from "/assets/hedgetrimming5.webp";
+import Hedge6 from "/assets/hedgetrimming6.webp";
 
-const Residential1 = getImageUrl('residential1.webp');
-const Residential2 = getImageUrl('residential2.webp');
-const Residential3 = getImageUrl('residential3.webp');
-const Residential4 = getImageUrl('residential4.webp');
-const Residential5 = getImageUrl('residential5.webp');
-const Residential6 = getImageUrl('residential6.webp');
+import Residential1 from "/assets/residential1.webp";
+import Residential2 from "/assets/residential2.webp";
+import Residential3 from "/assets/residential3.webp";
+import Residential4 from "/assets/residential4.webp";
+import Residential5 from "/assets/residential5.webp";
+import Residential6 from "/assets/residential6.webp";
 
-const Leaf1 = getImageUrl('leafremoval1.webp');
-const Leaf2 = getImageUrl('leafremoval2.webp');
-const Leaf3 = getImageUrl('leafremoval3.webp');
-const Leaf4 = getImageUrl('leafremoval4.webp');
-const Leaf5 = getImageUrl('leafremoval5.webp');
-const Leaf6 = getImageUrl('leafremoval6.webp');
+import Leaf1 from "/assets/leafremoval1.webp";
+import Leaf2 from "/assets/leafremoval2.webp";
+import Leaf3 from "/assets/leafremoval3.webp";
+import Leaf4 from "/assets/leafremoval4.webp";
+import Leaf5 from "/assets/leafremoval5.webp";
+import Leaf6 from "/assets/leafremoval6.webp";
 
 
 

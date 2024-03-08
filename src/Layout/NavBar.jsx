@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { GrClose, GrMenu } from "react-icons/gr";
 import { useMenu } from "../Components/MenuContext";
-import residentualIcon from "../assets/residential_icon.png";
-import commercialIcon from "../assets/commercial_icon.png";
-import leafIcon from "../assets/leafremoval_icon.png";
-import hedgeIcon from "../assets/hedgetrimming_icon.png";
+import residentualIcon from "/assets/residential_icon.png";
+import commercialIcon from "/assets/commercial_icon.png";
+import leafIcon from "/assets/leafremoval_icon.png";
+import hedgeIcon from "/assets/hedgetrimming_icon.png";
 import { BsFillTelephoneFill } from "react-icons/bs";
-import MeetTheTeam from "../assets/MeetTheTeam@2x.jpg";
-import LawnExample from "../assets/LawnExample6@2x.jpg";
+import MeetTheTeam from "/assets/MeetTheTeam@2x.jpg";
+import LawnExample from "/assets/LawnExample6@2x.jpg";
 
 import { Link } from "react-router-dom";
 

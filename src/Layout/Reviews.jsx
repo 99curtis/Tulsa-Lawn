@@ -1,9 +1,9 @@
 import React from "react";
 import LazyLoad from "react-lazy-load";
 import { FaQuoteLeft } from "react-icons/fa";
-import Review2 from "../assets/Review1@2x.jpg";
-import Review1 from "../assets/Review2@2x.jpg";
-import Review3 from "../assets/Review3@2x.jpg";
+import Review2 from "/assets/Review1@2x.jpg";
+import Review1 from "/assets/Review2@2x.jpg";
+import Review3 from "/assets/Review3@2x.jpg";
 
 function Reviews() {
   const reviews = [

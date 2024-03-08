@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import LazyLoad from "react-lazy-load";
 
-import LawnExample1 from "../assets/hedgetrimming1.webp";
-import LawnExample2 from "../assets/hedgetrimming2.webp";
-import LawnExample3 from "../assets/hedgetrimming3.webp";
-import LawnExample4 from "../assets/hedgetrimming4.webp";
-import LawnExample5 from "../assets/hedgetrimming5.webp";
-import LawnExample6 from "../assets/hedgetrimming6.webp";
+import LawnExample1 from "/assets/hedgetrimming1.webp";
+import LawnExample2 from "/assets/hedgetrimming2.webp";
+import LawnExample3 from "/assets/hedgetrimming3.webp";
+import LawnExample4 from "/assets/hedgetrimming4.webp";
+import LawnExample5 from "/assets/hedgetrimming5.webp";
+import LawnExample6 from "/assets/hedgetrimming6.webp";
 
-import HedgeIcon from "../assets/hedgetrimming_icon.png";
+import HedgeIcon from "/assets/hedgetrimming_icon.png";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const images = [
