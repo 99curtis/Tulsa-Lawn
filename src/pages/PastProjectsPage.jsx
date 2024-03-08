@@ -35,9 +35,23 @@ import Leaf5 from "/assets/leafremoval5.webp";
 import Leaf6 from "/assets/leafremoval6.webp";
 
 const categories = {
-  Commercial: [Commercial1, Commercial2, Commercial3, Commercial4, Commercial5, Commercial6],
+  Commercial: [
+    Commercial1,
+    Commercial2,
+    Commercial3,
+    Commercial4,
+    Commercial5,
+    Commercial6,
+  ],
   "Hedge Trimming": [Hedge1, Hedge2, Hedge3, Hedge4, Hedge5, Hedge6],
-  Residential: [Residential1, Residential2, Residential3, Residential4, Residential5, Residential6],
+  Residential: [
+    Residential1,
+    Residential2,
+    Residential3,
+    Residential4,
+    Residential5,
+    Residential6,
+  ],
   "Leaf Removal": [Leaf1, Leaf2, Leaf3, Leaf4, Leaf5, Leaf6],
 };
 
@@ -49,7 +63,8 @@ function PastProjectsPage() {
 
   const handlers = useSwipeable({
     onSwipedLeft: () => setCurrentSlide((prev) => (prev + 1) % images.length),
-    onSwipedRight: () => setCurrentSlide((prev) => (prev - 1 + images.length) % images.length),
+    onSwipedRight: () =>
+      setCurrentSlide((prev) => (prev - 1 + images.length) % images.length),
     trackMouse: true,
   });
 
@@ -67,54 +82,61 @@ function PastProjectsPage() {
   };
 
   return (
-    <div className="flex min-h-screen h-fit w-screen flex-col justify-between overflow-hidden bg-background">
+    <div className="flex min-h-screen w-screen flex-col justify-between overflow-hidden bg-background">
       <MenuProvider>
         <NavBar />
-        <div className="h-[52px] pt-3 text-center font-text text-4xl font-bold tracking-tighter text-text">
-          PAST PROJECTS
-        </div>
-        <div className="grid grid-cols-2 gap-2 p-2 text-center font-text text-sm">
-          {Object.keys(categories).map((category) => (
-            <button
-              key={category}
-              onClick={() => {
-                setSelectedCategory(category);
-                setCurrentSlide(0);
-              }}
-              className={`rounded-full border-2 border-primary ${selectedCategory === category ? "bg-secondary font-bold" : "bg-background"} transition ease-in-out hover:cursor-pointer`}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-        <div className="ml-[5%] h-[1px] w-[90%] bg-black"></div>
-        {/* Image Carousel */}
-
-        <div
-          className="relative m-2 overflow-hidden rounded-3xl border-2 border-black items-stretch flex-grow basis-0"
-          {...handlers}
-        >
-          <div
-            className="flex transition-transform duration-500 h-full w-full"
-            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-          >
-            {images.map((image, index) => (
-              <img
-                key={index}
-                src={image}
-                alt={`Slide ${index + 1}`}
-                className="block h-full w-full flex-shrink-0 object-cover"
-              />
-            ))}
+        <div className="flex h-[75svh] flex-col">
+          <div className="h-[25%]">
+            <div className="pt-3 text-center font-text text-4xl font-bold tracking-tighter text-text">
+              PAST PROJECTS
+            </div>
+            <div className="grid grid-cols-2 gap-2 p-2 text-center font-text text-sm">
+              {Object.keys(categories).map((category) => (
+                <button
+                  key={category}
+                  onClick={() => {
+                    setSelectedCategory(category);
+                    setCurrentSlide(0);
+                  }}
+                  className={`rounded-full border-2 border-primary ${selectedCategory === category ? "bg-secondary font-bold" : "bg-background"} transition ease-in-out hover:cursor-pointer`}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+            <div className="ml-[5%] h-[1px] w-[90%] bg-black"></div>
           </div>
-          <FaChevronLeft
-            onClick={() => navigateSlide(-1)}
-            className="absolute left-0 top-1/2 -translate-y-1/2 cursor-pointer rounded-full bg-black bg-opacity-30 text-5xl text-background"
-          />
-          <FaChevronRight
-            onClick={() => navigateSlide(1)}
-            className="absolute right-0 top-1/2 -translate-y-1/2 cursor-pointer rounded-full bg-black bg-opacity-30 text-5xl text-background"
-          />
+
+          {/* Image Carousel */}
+          <div className="h-[70%]">
+            <div
+              className="relative m-2 h-full overflow-hidden rounded-3xl border-2 border-black"
+              {...handlers}
+            >
+              <div
+                className="flex transition-transform duration-500 h-full"
+                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+              >
+                {images.map((image, index) => (
+                  <img
+                    key={index}
+                    src={image}
+                    alt={`Slide ${index + 1}`}
+                    className=" h-full w-full flex-shrink-0 object-cover"
+                  />
+                ))}
+              </div>
+              <FaChevronLeft
+                onClick={() => navigateSlide(-1)}
+                className="absolute left-0 top-1/2 -translate-y-1/2 cursor-pointer rounded-full bg-black bg-opacity-30 text-5xl text-background"
+              />
+              <FaChevronRight
+                onClick={() => navigateSlide(1)}
+                className="absolute right-0 top-1/2 -translate-y-1/2 cursor-pointer rounded-full bg-black bg-opacity-30 text-5xl text-background"
+              />
+            </div>
+          </div>
+
         </div>
         <Footer />
       </MenuProvider>
