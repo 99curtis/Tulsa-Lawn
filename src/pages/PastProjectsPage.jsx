@@ -5,24 +5,47 @@ import NavBar from "../Layout/NavBar";
 import Footer from "../Layout/Footer";
 import { MenuProvider } from "../Components/MenuContext";
 
+// Import all images statically
+import Commercial1 from "/assets/commercial1.webp";
+import Commercial2 from "/assets/commercial2.webp";
+import Commercial3 from "/assets/commercial3.webp";
+import Commercial4 from "/assets/commercial4.webp";
+import Commercial5 from "/assets/commercial5.webp";
+import Commercial6 from "/assets/commercial6.webp";
+
+import Hedge1 from "/assets/hedgetrimming1.webp";
+import Hedge2 from "/assets/hedgetrimming2.webp";
+import Hedge3 from "/assets/hedgetrimming3.webp";
+import Hedge4 from "/assets/hedgetrimming4.webp";
+import Hedge5 from "/assets/hedgetrimming5.webp";
+import Hedge6 from "/assets/hedgetrimming6.webp";
+
+import Residential1 from "/assets/residential1.webp";
+import Residential2 from "/assets/residential2.webp";
+import Residential3 from "/assets/residential3.webp";
+import Residential4 from "/assets/residential4.webp";
+import Residential5 from "/assets/residential5.webp";
+import Residential6 from "/assets/residential6.webp";
+
+import Leaf1 from "/assets/leafremoval1.webp";
+import Leaf2 from "/assets/leafremoval2.webp";
+import Leaf3 from "/assets/leafremoval3.webp";
+import Leaf4 from "/assets/leafremoval4.webp";
+import Leaf5 from "/assets/leafremoval5.webp";
+import Leaf6 from "/assets/leafremoval6.webp";
+
+const categories = {
+  Commercial: [Commercial1, Commercial2, Commercial3, Commercial4, Commercial5, Commercial6],
+  "Hedge Trimming": [Hedge1, Hedge2, Hedge3, Hedge4, Hedge5, Hedge6],
+  Residential: [Residential1, Residential2, Residential3, Residential4, Residential5, Residential6],
+  "Leaf Removal": [Leaf1, Leaf2, Leaf3, Leaf4, Leaf5, Leaf6],
+};
+
 function PastProjectsPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState("Commercial");
 
-  const categories = {
-    "Commercial": Array.from({ length: 6 }, (_, i) => import(`/assets/commercial${i + 1}.webp`)),
-    "Hedge Trimming": Array.from({ length: 6 }, (_, i) => import(`/assets/hedgetrimming${i + 1}.webp`)),
-    "Residential": Array.from({ length: 6 }, (_, i) => import(`/assets/residential${i + 1}.webp`)),
-    "Leaf Removal": Array.from({ length: 6 }, (_, i) => import(`/assets/leafremoval${i + 1}.webp`)),
-  };
-
-  const imagesPromise = categories[selectedCategory];
-
-  const [images, setImages] = useState([]);
-
-  Promise.all(imagesPromise).then((loadedImages) => {
-    setImages(loadedImages.map((module) => module.default));
-  });
+  const images = categories[selectedCategory];
 
   const handlers = useSwipeable({
     onSwipedLeft: () => setCurrentSlide((prev) => (prev + 1) % images.length),
