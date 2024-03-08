@@ -1,8 +1,8 @@
 import React from "react";
-import LawnHeroTR from "../assets/LawnHeroTR.webp";
-import LawnHeroTL from "../assets/LawnHeroTL.webp";
-import LawnHeroBR from "../assets/LawnHeroBR.webp";
-import LawnHeroBL from "../assets/LawnHeroBL.webp";
+import LawnHeroTR from "/assets/LawnHeroTR.webp";
+import LawnHeroTL from "/assets/LawnHeroTL.webp";
+import LawnHeroBR from "/assets/LawnHeroBR.webp";
+import LawnHeroBL from "/assets/LawnHeroBL.webp";
 
 function ServicesHero() {
   return (

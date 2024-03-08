@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-import LawnExample1 from "../assets/leafremoval3.webp";
-import LawnExample2 from "../assets/leafremoval2.webp";
-import LawnExample3 from "../assets/leafremoval1.webp";
-import LawnExample4 from "../assets/leafremoval4.webp";
-import LawnExample5 from "../assets/leafremoval5.webp";
-import LawnExample6 from "../assets/leafremoval6.webp";
+import LawnExample1 from "/assets/leafremoval3.webp";
+import LawnExample2 from "/assets/leafremoval2.webp";
+import LawnExample3 from "/assets/leafremoval1.webp";
+import LawnExample4 from "/assets/leafremoval4.webp";
+import LawnExample5 from "/assets/leafremoval5.webp";
+import LawnExample6 from "/assets/leafremoval6.webp";
 
-import LeafIcon from "../assets/leafremoval_icon.png";
+import LeafIcon from "/assets/leafremoval_icon.png";
 
 const images = [
   LawnExample1,
