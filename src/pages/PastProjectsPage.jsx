@@ -67,7 +67,7 @@ function PastProjectsPage() {
   };
 
   return (
-    <div className="flex min-h-screen w-screen flex-col justify-between overflow-hidden bg-background">
+    <div className="flex min-h-screen h-fit w-screen flex-col justify-between overflow-hidden bg-background">
       <MenuProvider>
         <NavBar />
         <div className="h-[52px] pt-3 text-center font-text text-4xl font-bold tracking-tighter text-text">
@@ -89,12 +89,13 @@ function PastProjectsPage() {
         </div>
         <div className="ml-[5%] h-[1px] w-[90%] bg-black"></div>
         {/* Image Carousel */}
+
         <div
-          className="relative m-2 flex-grow overflow-hidden rounded-3xl border-2 border-black h-0"
+          className="relative m-2 overflow-hidden rounded-3xl border-2 border-black items-stretch flex-grow basis-0"
           {...handlers}
         >
           <div
-            className="flex h-full transition-transform duration-500"
+            className="flex transition-transform duration-500 h-full w-full"
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
           >
             {images.map((image, index) => (
@@ -102,7 +103,7 @@ function PastProjectsPage() {
                 key={index}
                 src={image}
                 alt={`Slide ${index + 1}`}
-                className="block h-full flex-shrink-0 object-cover"
+                className="block h-full w-full flex-shrink-0 object-cover"
               />
             ))}
           </div>

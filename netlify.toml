@@ -1,0 +1,34 @@
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/services/residential-lawn"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/services/commercial-lawn"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/services/hedge-trimming"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/services/leaf-removal"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/about"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/past-projects"
+  to = "/index.html"
+  status = 200
