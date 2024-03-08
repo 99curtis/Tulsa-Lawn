@@ -50,7 +50,7 @@ function LeafRemovalService() {
       </div>
 
       {/* Service Description */}
-      <div className="flex h-[35%] flex-col justify-between rounded-3xl bg-background p-2 border-[1px] border-text bg-secondary">
+      <div className="flex h-[35%] flex-col justify-between rounded-3xl p-2 border-[1px] border-text bg-secondary">
         <div className="px-2 leading-tight">
           Efficiently clear your outdoor spaces of leaf clutter with our leaf removal service. Our fast and thorough approach enhances your lawn's beauty and health, ensuring a pristine environment for you and your guests.
         </div>

@@ -20,9 +20,9 @@ function ServicesPage() {
     const service = pathSegments[pathSegments.length - 1];
     
     // Check if we're at the base services URL or a specific service URL
-    if (pathSegments.length === 2) { // This means we're at /Tulsa-Lawn/services/ with no additional path
+    if (pathSegments.length === 1) { // This means we're at /services/ with no additional path
       window.scrollTo({ top: 0, behavior: "smooth" });
-    } else if (pathSegments.length > 2) { // This means we're at a specific service URL
+    } else if (pathSegments.length > 1) { // This means we're at a specific service URL
       const section = document.getElementById(service);
       if (section) {
         window.requestAnimationFrame(() => {
@@ -31,6 +31,7 @@ function ServicesPage() {
       }
     }
   }, [location]);
+  
 
   return (
     <div className="min-h-screen w-screen overflow-x-hidden bg-background">

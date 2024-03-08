@@ -21,11 +21,7 @@ const router = createBrowserRouter([
     element: <HomePage />,
   },
   {
-    path: "/Tulsa-Lawn",
-    element: <HomePage />,
-  },
-  {
-    path: "/Tulsa-Lawn/services",
+    path: "/services/",
     element: (
       <Suspense fallback={<div>Loading...</div>}>
         <LazyServicesPage />
@@ -47,7 +43,7 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/Tulsa-Lawn/about",
+    path: "/about",
     element: (
       <Suspense fallback={<div>Loading...</div>}>
         <LazyAboutUsPage />
@@ -55,7 +51,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/Tulsa-Lawn/past-projects",
+    path: "/past-projects",
     element: (
       <Suspense fallback={<div>Loading...</div>}>
         <LazyProjectsPage />

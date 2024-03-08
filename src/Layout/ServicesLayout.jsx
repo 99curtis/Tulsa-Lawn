@@ -10,7 +10,7 @@ function ServiceCards() {
     <>
       <div className="bg-secondary">
         <div className="flex h-fit flex-col items-center px-5 pt-20 font-text text-text">
-          <Link to="/Tulsa-Lawn/services">
+          <Link to="/services">
             <div className="text-2xl font-bold">Services</div>
           </Link>
           <div className="mb-10 text-center text-xs">
@@ -19,7 +19,7 @@ function ServiceCards() {
         </div>
 
         <Link
-          to="/Tulsa-Lawn/services/residential-lawn"
+          to="/services/residential-lawn"
           className="mr-4 flex h-[200px] w-fit flex-col overflow-hidden rounded-br-[50px] rounded-tl-[50px] border-2 border-primary border-opacity-50 bg-background transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:cursor-pointer hover:border-opacity-100 hover:bg-primary hover:bg-opacity-10"
         >
           <div className="flex w-full justify-end">
@@ -44,7 +44,7 @@ function ServiceCards() {
         </Link>
 
         <Link
-          to="/Tulsa-Lawn/services/commercial-lawn"
+          to="/services/commercial-lawn"
           className="ml-4 mt-5 flex h-[200px] w-fit flex-col overflow-hidden rounded-bl-[50px] rounded-tr-[50px] border-2 border-primary border-opacity-50 bg-background transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:cursor-pointer hover:border-opacity-100 hover:bg-primary hover:bg-opacity-10"
         >
           <div className="flex w-full justify-start">
@@ -68,7 +68,7 @@ function ServiceCards() {
         </Link>
 
         <Link
-          to="/Tulsa-Lawn/services/leaf-removal"
+          to="/services/leaf-removal"
           className="mr-4 mt-5 flex h-[200px] w-fit flex-col overflow-hidden rounded-br-[50px] rounded-tl-[50px] border-2 border-primary border-opacity-50 bg-background transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:cursor-pointer hover:border-opacity-100 hover:bg-primary hover:bg-opacity-10"
         >
           <div className="flex w-full justify-end">
@@ -93,7 +93,7 @@ function ServiceCards() {
         </Link>
 
         <Link
-          to="/Tulsa-Lawn/services/hedge-trimming"
+          to="/services/hedge-trimming"
           className="ml-4 mt-5 flex h-[200px] w-fit flex-col overflow-hidden rounded-bl-[50px] rounded-tr-[50px] border-2 border-primary border-opacity-50 bg-background transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:cursor-pointer hover:border-opacity-100 hover:bg-primary hover:bg-opacity-10"
         >
           <div className="flex w-full justify-start">

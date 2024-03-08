@@ -43,7 +43,7 @@ function NavBar() {
   return (
     <div className="relative w-screen">
       <div className="flex h-20 items-center justify-between border-black px-4">
-        <Link to="/Tulsa-Lawn/">
+        <Link to="/">
           <div className="font-logo text-3xl font-bold text-primary">
             Tulsa Lawn
           </div>
@@ -66,7 +66,7 @@ function NavBar() {
           isMenuVisible ? " translate-x-0" : " translate-x-full"
         }`}
       >
-        <Link to="/Tulsa-Lawn/services" onClick={() => toggleMenu()}>
+        <Link to="/services" onClick={() => toggleMenu()}>
           <div
             style={isMenuVisible ? fallingStyle(500) : {}}
             className="mb-[-10px] mt-1 w-screen text-center text-2xl text-background"
@@ -78,7 +78,7 @@ function NavBar() {
         <div className="h-full">
           <div className="grid h-2/5 grid-cols-2 gap-1 p-2">
             <Link
-              to="/Tulsa-Lawn/services/residential-lawn"
+              to="/services/residential-lawn"
               style={isMenuVisible ? fallingStyle(750) : {}}
               className="flex flex-col items-center justify-center rounded-3xl border-2 border-text bg-background"
               onClick={() => toggleMenu()}
@@ -95,7 +95,7 @@ function NavBar() {
             </Link>
 
             <Link
-              to="/Tulsa-Lawn/services/commercial-lawn"
+              to="/services/commercial-lawn"
               style={isMenuVisible ? fallingStyle(750) : {}}
               className="flex flex-col items-center justify-center rounded-3xl border-2 border-text bg-background"
               onClick={() => toggleMenu()}
@@ -115,7 +115,7 @@ function NavBar() {
             </Link>
 
             <Link
-              to="/Tulsa-Lawn/services/hedge-trimming"
+              to="/services/hedge-trimming"
               style={isMenuVisible ? fallingStyle(900) : {}}
               className="flex flex-col items-center justify-center rounded-3xl border-2 border-text bg-background"
               onClick={() => toggleMenu()}
@@ -132,7 +132,7 @@ function NavBar() {
             </Link>
 
             <Link
-              to="/Tulsa-Lawn/services/leaf-removal"
+              to="/services/leaf-removal"
               style={isMenuVisible ? fallingStyle(900) : {}}
               className="flex flex-col items-center justify-center rounded-3xl border-2 border-text bg-background"
               onClick={() => toggleMenu()}
@@ -162,7 +162,7 @@ function NavBar() {
             className="mx-2 mt-2 grid h-1/4 grid-cols-2 gap-2"
           >
             <Link
-              to="/Tulsa-Lawn/past-projects"
+              to="/past-projects"
               className="relative rounded-3xl"
               onClick={() => toggleMenu()}
             >
@@ -181,7 +181,7 @@ function NavBar() {
               </div>
             </Link>
             <Link
-              to="/Tulsa-Lawn/about"
+              to="/about"
               className="relative rounded-3xl"
               onClick={() => toggleMenu()}
             >

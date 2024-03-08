@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSwipeable } from "react-swipeable";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import NavBar from "../Layout/NavBar";
 import Footer from "../Layout/Footer";
 import { MenuProvider } from "../Components/MenuContext";
 
+
 // Direct imports
+
 import Commercial1 from "../assets/commercial1.webp";
 import Commercial2 from "../assets/commercial2.webp";
 import Commercial3 from "../assets/commercial3.webp";
@@ -34,6 +36,7 @@ import Leaf4 from "../assets/leafremoval4.webp";
 import Leaf5 from "../assets/leafremoval5.webp";
 import Leaf6 from "../assets/leafremoval6.webp";
 
+
 // Mapping categories to their respective images
 const categoryImages = {
   Commercial: [Commercial1, Commercial2, Commercial3, Commercial4, Commercial5, Commercial6],
@@ -46,41 +49,24 @@ const allImages = [].concat(...Object.values(categoryImages));
 
 function PastProjectsPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [selectedCategory, setSelectedCategory] = useState(null); // No category selected by default
-
-  // Determine images to display based on the selected category
+  const [selectedCategory, setSelectedCategory] = useState(null);
   const images = selectedCategory ? categoryImages[selectedCategory] : allImages;
 
   const handlers = useSwipeable({
-    onSwipedLeft: () => moveSlide(1),
-    onSwipedRight: () => moveSlide(-1),
+    onSwipedLeft: () => setCurrentSlide((prev) => (prev + 1) % images.length),
+    onSwipedRight: () => setCurrentSlide((prev) => (prev - 1 + images.length) % images.length),
     preventDefaultTouchmoveEvent: true,
     trackMouse: true,
   });
 
-  const moveSlide = (direction) => {
-    setCurrentSlide((prev) => {
-      const newIndex = prev + direction;
-      const totalSlides = images.length;
-      if (newIndex < 0) {
-        return totalSlides - 1;
-      } else if (newIndex >= totalSlides) {
-        return 0;
-      }
-      return newIndex;
-    });
-  };
-
   const calculateOffset = () => {
-    const slideWidth = 100; // Assuming each slide takes up 100% of the carousel width
+    const slideWidth = 100;
     return `-${currentSlide * slideWidth}%`;
   };
 
   const handleCategorySelect = (category) => {
-    // If the selected category is clicked again, deselect it and show all images.
-    // Otherwise, select the new category.
     setSelectedCategory(selectedCategory === category ? null : category);
-    setCurrentSlide(0); // Reset slide to the beginning for the new or deselected category
+    setCurrentSlide(0);
   };
 
   return (
@@ -105,31 +91,21 @@ function PastProjectsPage() {
         </div>
         {/* Image Carousel */}
         <div className="ml-[5%] h-[1px] w-[90%] bg-black"></div>
-        <div
-          className="relative m-2 flex-grow overflow-hidden rounded-3xl border-2 border-black h-0"
-          {...handlers}
-        >
-          <div
-            className="flex h-full w-full transition-transform duration-500"
-            style={{ transform: `translateX(${calculateOffset()})` }}
-          >
+        <div className="relative m-2 flex-grow overflow-hidden rounded-3xl border-2 border-black h-0" {...handlers}>
+          <div className="flex h-full w-full transition-transform duration-500" style={{ transform: `translateX(${calculateOffset()})` }}>
             {images.map((image, index) => (
               <div key={index} className="h-full w-full flex-shrink-0">
-                <img
-                  src={image}
-                  alt={`Slide ${index + 1}`}
-                  className="block h-full w-full object-cover"
-                />
+                <img src={image} alt={`Slide ${index + 1}`} className="block h-full w-full object-cover" />
               </div>
             ))}
           </div>
           {/* Navigation Icons */}
           <FaChevronLeft
-            onClick={() => moveSlide(-1)}
+            onClick={() => setCurrentSlide((prev) => (prev - 1 + images.length) % images.length)}
             className="absolute left-0 top-1/2 -translate-y-1/2 cursor-pointer rounded-full bg-black bg-opacity-30 text-5xl text-background"
           />
           <FaChevronRight
-            onClick={() => moveSlide(1)}
+            onClick={() => setCurrentSlide((prev) => (prev + 1) % images.length)}
             className="absolute right-0 top-1/2 -translate-y-1/2 cursor-pointer rounded-full bg-black bg-opacity-30 text-5xl text-background"
           />
         </div>

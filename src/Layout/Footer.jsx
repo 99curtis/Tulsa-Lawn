@@ -50,10 +50,10 @@ function Footer() {
       <div className="ml-[5%] mt-2 h-[1px] w-[90%] bg-background"></div>
 
       <div className="flex items-center justify-around p-4">
-        <Link to="/Tulsa-Lawn/privacy-policy" target="_blank" className="text-xs hover:underline">
+        <Link to="/privacy-policy" target="_blank" className="text-xs hover:underline">
           Privacy Policy
         </Link>
-        <Link to="/Tulsa-Lawn/terms-of-use" target="_blank" className="text-xs hover:underline">
+        <Link to="/terms-of-use" target="_blank" className="text-xs hover:underline">
           Terms of Use
         </Link>
       </div>

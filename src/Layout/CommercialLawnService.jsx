@@ -63,9 +63,9 @@ function CommercialLawnService() {
           ))}
         </div>
         <FaChevronLeft onClick={() => setCurrentSlide((prev) => (prev - 1 + images.length) % images.length)}
-          className="absolute left-3 top-1/2 -translate-y-1/2 cursor-pointer rounded-full text-5xl bg-text bg-opacity-60 text-background" />
+          className="absolute top-1/2 -translate-y-1/2 cursor-pointer rounded-full text-5xl bg-text bg-opacity-60 text-background" />
         <FaChevronRight onClick={() => setCurrentSlide((prev) => (prev + 1) % images.length)}
-          className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer rounded-full text-5xl bg-text bg-opacity-60 text-background" />
+          className="absolute right-0 top-1/2 -translate-y-1/2 cursor-pointer rounded-full text-5xl bg-text bg-opacity-60 text-background" />
       </div>
     </div>
   );
