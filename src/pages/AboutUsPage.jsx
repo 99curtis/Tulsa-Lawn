@@ -1,12 +1,16 @@
 import NavBar from "../Layout/NavBar";
 import { MenuProvider } from "../Components/MenuContext";
+import AboutUsHeader from "../Layout/AboutUsHeader.jsx";
+import Footer from "../Layout/Footer.jsx";
+
 
 function AboutUsPage() {
   return (
-    <div className="bg-background min-h-screen w-screen overflow-x-hidden">
-      <MenuProvider >
-        < NavBar />
-        <div>About Us</div>
+    <div className="min-h-screen w-screen overflow-hidden bg-background">
+      <MenuProvider>
+        <NavBar />
+        <AboutUsHeader />
+        <Footer />
       </MenuProvider>
     </div>
   );
