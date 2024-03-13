@@ -34,7 +34,7 @@ function ServicesPage() {
   
 
   return (
-    <div className="min-h-screen w-screen overflow-x-hidden bg-background">
+    <div className="min-h-screen w-screen overflow-hidden bg-background">
       <MenuProvider>
         <NavBar /> 
 

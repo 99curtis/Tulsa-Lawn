@@ -9,7 +9,7 @@ import { MenuProvider } from '../Components/MenuContext';
 
 function HomePage () {
   return (
-    <div className="bg-background min-h-screen w-screen overflow-x-hidden">
+    <div className="bg-background min-h-screen w-screen overflow-hidden">
       <MenuProvider >
         < NavBar />
         < MobileHero />
