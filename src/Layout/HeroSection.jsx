@@ -5,7 +5,7 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 function MobileHero() {
   return (
     <>
-      <div className="relative mx-4 mt-10 h-[80vh] min-h-[600px] overflow-hidden rounded-3xl bg-cover bg-center">
+      <div className="relative mx-4 md:mx-[20%] mt-10 h-[80vh] md:h-[60vh] min-h-[600px] overflow-hidden rounded-3xl bg-cover bg-center">
         <div
           className="z-1 absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroImage})` }}
@@ -14,7 +14,7 @@ function MobileHero() {
 
         <div className="z-3 absolute flex h-full flex-col justify-around p-2">
           <div
-            className="p-1 text-center font-text text-[40px] font-bold leading-none tracking-tight text-background"
+            className="p-1 text-center font-text text-[40px] md:text-[60px] font-bold leading-none tracking-tight text-background"
             style={{
               textShadow: "2px 2px 5px #000000, -2px -2px 5px #000000",
             }}
@@ -22,7 +22,7 @@ function MobileHero() {
             TULSA'S FAVORITE LAWN COMPANY
           </div>
           <div
-            className="p-1 text-center font-text text-2xl text-background"
+            className="p-1 text-center font-text text-2xl md:text-3xl text-background"
             style={{
               textShadow: "2px 2px 5px #000000, -2px -2px 5px #000000",
             }}

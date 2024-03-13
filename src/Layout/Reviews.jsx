@@ -25,10 +25,10 @@ function Reviews() {
   ];
 
   return (
-    <div className="bg-secondary">
+    <div className="bg-secondary overflow-hidden">
       <div className="px-5 pt-20 font-text text-text">
-        <div className="text-center text-2xl font-bold ">Reviews</div>
-        <div className="mb-16 text-center text-xs">
+        <div className="text-center text-2xl md:text-4xl font-bold ">Reviews</div>
+        <div className="mb-16 text-center text-xs md:text-base">
           Don't just take our word for it, read what our customers are saying
         </div>
       </div>
@@ -36,7 +36,7 @@ function Reviews() {
       {reviews.map((review, index) => (
         <div
           key={index}
-          className="relative mx-10 mt-10 rounded-3xl"
+          className="relative mx-10 md:mx-32 lg:mx-[30%] md:h-[300px] mt-10 rounded-3xl"
         >
           <LazyLoad offset={100}>
             <img
@@ -47,8 +47,8 @@ function Reviews() {
           </LazyLoad>
           <div className="absolute inset-0 bg-black bg-opacity-60 rounded-3xl"></div>
           <FaQuoteLeft className="absolute top-2 left-6 -translate-y-1/2 rounded-full bg-primary p-4 text-6xl text-background border-2 border-bg" />
-          <div className="relative z-10 p-5 font-text">
-            <div className="mt-8 text-xl font-bold italic text-background">
+          <div className="relative z-10 p-5 font-text flex flex-col h-full justify-between">
+            <div className="mt-8 text-xl md:text-2xl font-bold italic text-background">
               {review.text}
             </div>
             <div className="mt-1 text-background">{review.author}</div>

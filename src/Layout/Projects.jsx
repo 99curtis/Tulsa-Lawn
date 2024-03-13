@@ -31,7 +31,8 @@ function Portfolio() {
 
   const handlers = useSwipeable({
     onSwipedLeft: () => setCurrentSlide((prev) => (prev + 1) % images.length),
-    onSwipedRight: () => setCurrentSlide((prev) => (prev - 1 + images.length) % images.length),
+    onSwipedRight: () =>
+      setCurrentSlide((prev) => (prev - 1 + images.length) % images.length),
     preventDefaultTouchmoveEvent: true,
     trackMouse: true,
   });
@@ -43,36 +44,52 @@ function Portfolio() {
 
   return (
     <>
-      <div className="mt-20 h-28 px-5 font-text text-text">
+      <div className="mt-20 h-28 px-5 font-text text-text overflow-hidden">
         <Link to="/past-projects">
-        <div className="text-center text-2xl font-bold">Projects</div>
+          <div className="text-center text-2xl font-bold md:text-4xl">
+            Projects
+          </div>
         </Link>
-        <div className="mb-10 text-center text-xs">
+        <div className="mb-10 text-center text-xs md:text-base">
           Any size, any difficulty. Tulsa Lawn has done it all for 20 years, and
           we will continue to provide only the best.
         </div>
       </div>
-      <div className="m-2">
-      <div className="relative flex h-[400px] w-full overflow-hidden border-2 border-black rounded-3xl" {...handlers}>
-        <div className="flex h-full w-full transition-transform duration-500" style={{ transform: `translateX(${calculateOffset()})` }}>
-          {images.map((image, index) => (
-            <img
-              key={index}
-              src={image}
-              alt={`Slide ${index + 1}`}
-              className="min-w-full h-full object-cover flex-shrink-0"
+      <div className="">
+        <div className="w-screen flex justify-center">
+          <div
+            className="relative flex h-[400px] w-[90%] overflow-hidden rounded-3xl border-2 border-black md:h-[600px] lg:h-[700px] md:w-[80%] lg:w-[60%]"
+            {...handlers}
+          >
+            <div
+              className="flex h-full w-full transition-transform duration-500"
+              style={{ transform: `translateX(${calculateOffset()})` }}
+            >
+              {images.map((image, index) => (
+                <img
+                  key={index}
+                  src={image}
+                  alt={`Slide ${index + 1}`}
+                  className="h-full min-w-full flex-shrink-0 object-cover"
+                />
+              ))}
+            </div>
+            <FaChevronLeft
+              onClick={() =>
+                setCurrentSlide(
+                  (prev) => (prev - 1 + images.length) % images.length,
+                )
+              }
+              className="absolute top-1/2 -translate-y-1/2 cursor-pointer rounded-full bg-text bg-opacity-60 text-5xl text-background"
             />
-          ))}
+            <FaChevronRight
+              onClick={() =>
+                setCurrentSlide((prev) => (prev + 1) % images.length)
+              }
+              className="absolute right-0 top-1/2 -translate-y-1/2 cursor-pointer rounded-full bg-text bg-opacity-60 text-5xl text-background"
+            />
+          </div>
         </div>
-        <FaChevronLeft
-          onClick={() => setCurrentSlide((prev) => (prev - 1 + images.length) % images.length)}
-          className="absolute top-1/2 -translate-y-1/2 cursor-pointer rounded-full text-5xl bg-text bg-opacity-60 text-background"
-        />
-        <FaChevronRight
-          onClick={() => setCurrentSlide((prev) => (prev + 1) % images.length)}
-          className="absolute right-0 top-1/2 -translate-y-1/2 cursor-pointer rounded-full text-5xl bg-text bg-opacity-60 text-background"
-        />
-      </div>
       </div>
       <div className="h-24"></div>
     </>
