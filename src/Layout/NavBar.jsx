@@ -10,9 +10,55 @@ import MeetTheTeam from "/assets/MeetTheTeam@2x.jpg";
 import LawnExample from "/assets/LawnExample6@2x.jpg";
 
 import { Link } from "react-router-dom";
+import useDeferredNavigate from "../Components/deferredNavigate";
 
 function NavBar() {
   const { isMenuVisible, toggleMenu } = useMenu();
+  const deferredNavigate = useDeferredNavigate();
+
+  const handleServicesClick = () => {
+    toggleMenu();
+    deferredNavigate("/services");
+  };
+
+  const handleHomePageClick = () => {
+    toggleMenu();
+    deferredNavigate("/");
+  };
+
+  const handleResidentialClick = () => {
+    toggleMenu();
+    deferredNavigate("/services/residential-lawn");
+  };
+
+  const handleCommercialClick = () => {
+    toggleMenu();
+    deferredNavigate("/services/commercial-lawn");
+  };
+
+  const handleHedgeTrimmingClick = () => {
+    toggleMenu();
+    deferredNavigate("/services/hedge-trimming");
+  };
+
+  const handleLeafRemovalClick = () => {
+    toggleMenu();
+    deferredNavigate("/services/leaf-removal");
+  };
+
+  const handlePastProjectsClick = () => {
+    toggleMenu();
+    deferredNavigate("/past-projects");
+  };
+
+
+
+  const handleAboutUsClick = () => {
+    toggleMenu();
+    deferredNavigate("/about");
+  };
+
+
 
   useEffect(() => {
     const handleOverflow = () => {
@@ -43,11 +89,11 @@ function NavBar() {
   return (
     <div className="relative w-screen">
       <div className="flex h-20 items-center justify-between border-black px-4">
-        <Link to="/">
+        <div onClick={handleHomePageClick}>
           <div className="font-logo text-3xl font-bold text-primary">
             Tulsa Lawn
           </div>
-        </Link>
+        </div>
         <button
           onClick={toggleMenu}
           className="rounded-lg bg-primary p-3 text-accent shadow-md"
@@ -66,22 +112,21 @@ function NavBar() {
           isMenuVisible ? " translate-x-0" : " translate-x-full"
         }`}
       >
-        <Link to="/services" onClick={() => toggleMenu()}>
-          <div
-            style={isMenuVisible ? fallingStyle(500) : {}}
-            className="mb-[-10px] mt-1 w-screen text-center text-2xl text-background"
-          >
+        <div
+        onClick={handleServicesClick}
+        style={isMenuVisible ? fallingStyle(500) : {}}
+        className="mb-[-10px] mt-1 w-screen text-center text-2xl text-background cursor-pointer"
+      >
             SERVICES
           </div>
-        </Link>
+ 
 
         <div className="h-full">
           <div className="grid h-2/5 grid-cols-2 gap-1 p-2">
-            <Link
-              to="/services/residential-lawn"
+            <div
               style={isMenuVisible ? fallingStyle(750) : {}}
               className="flex flex-col items-center justify-center rounded-3xl border-2 border-text bg-background"
-              onClick={() => toggleMenu()}
+              onClick={handleResidentialClick}
             >
               <div className="pt-1 text-center font-text text-base font-bold text-primary">
                 RESIDENTIAL LAWN
@@ -92,13 +137,12 @@ function NavBar() {
                   className="ml-2 h-3/5 w-full scale-[1.7] items-center overflow-hidden bg-contain bg-center bg-no-repeat"
                 ></div>
               </div>
-            </Link>
+            </div>
 
-            <Link
-              to="/services/commercial-lawn"
+            <div
               style={isMenuVisible ? fallingStyle(750) : {}}
               className="flex flex-col items-center justify-center rounded-3xl border-2 border-text bg-background"
-              onClick={() => toggleMenu()}
+              onClick={handleCommercialClick}
             >
               <div className="pt-1 text-center font-text text-base font-bold text-primary">
                 COMMERCIAL LAWN
@@ -112,13 +156,12 @@ function NavBar() {
                   className="ml-2 h-3/5 w-full items-center overflow-hidden bg-contain bg-center bg-no-repeat"
                 ></div>
               </div>
-            </Link>
+            </div>
 
-            <Link
-              to="/services/hedge-trimming"
+            <div
               style={isMenuVisible ? fallingStyle(900) : {}}
               className="flex flex-col items-center justify-center rounded-3xl border-2 border-text bg-background"
-              onClick={() => toggleMenu()}
+              onClick={handleHedgeTrimmingClick}
             >
               <div className="pt-1 text-center font-text text-base font-bold text-primary">
                 HEDGE TRIMMING
@@ -129,13 +172,12 @@ function NavBar() {
                   className="ml-2 h-3/5 w-full -translate-y-1 scale-[1.7] items-center overflow-hidden bg-contain bg-center bg-no-repeat"
                 ></div>
               </div>
-            </Link>
+            </div>
 
-            <Link
-              to="/services/leaf-removal"
+            <div
               style={isMenuVisible ? fallingStyle(900) : {}}
               className="flex flex-col items-center justify-center rounded-3xl border-2 border-text bg-background"
-              onClick={() => toggleMenu()}
+              onClick={handleLeafRemovalClick}
             >
               <div className="pt-1 text-center font-text text-base font-bold text-primary">
                 LEAF REMOVAL
@@ -146,7 +188,7 @@ function NavBar() {
                   className="ml-2 h-3/5 w-full -translate-y-1 scale-[1.5] items-center overflow-hidden bg-contain bg-center bg-no-repeat"
                 ></div>
               </div>
-            </Link>
+            </div>
           </div>
 
           <div
@@ -161,10 +203,9 @@ function NavBar() {
             style={isMenuVisible ? fallingStyle(1050) : {}}
             className="mx-2 mt-2 grid h-1/4 grid-cols-2 gap-2"
           >
-            <Link
-              to="/past-projects"
+            <div
               className="relative rounded-3xl"
-              onClick={() => toggleMenu()}
+              onClick={handlePastProjectsClick}
             >
               <div
                 style={{ backgroundImage: `url(${LawnExample})` }}
@@ -179,11 +220,10 @@ function NavBar() {
               >
                 PAST PROJECTS
               </div>
-            </Link>
-            <Link
-              to="/about"
+            </div>
+            <div
               className="relative rounded-3xl"
-              onClick={() => toggleMenu()}
+              onClick={handleAboutUsClick}
             >
               <div
                 style={{ backgroundImage: `url(${MeetTheTeam})` }}
@@ -198,7 +238,7 @@ function NavBar() {
               >
                 ABOUT US
               </div>
-            </Link>
+            </div>
           </div>
 
           <div className="flex h-[26svh] items-center justify-center">
