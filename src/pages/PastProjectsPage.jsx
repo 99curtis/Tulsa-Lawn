@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { useSwipeable } from "react-swipeable";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import NavBar from "../Layout/NavBar";
@@ -55,6 +55,18 @@ const categories = {
   "Leaf Removal": [Leaf1, Leaf2, Leaf3, Leaf4, Leaf5, Leaf6],
 };
 
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
+
 function PastProjectsPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState("Commercial");
@@ -69,15 +81,23 @@ function PastProjectsPage() {
   });
 
   // Correctly update currentSlide for previous and next navigation
+  const debouncedSetSelectedCategory = useCallback(
+    debounce(setSelectedCategory, 250),
+    [],
+  );
+
+  // Correctly update currentSlide for previous and next navigation, wrapped in startTransition
   const navigateSlide = (direction) => {
-    setCurrentSlide((prev) => {
-      let nextIndex = prev + direction;
-      if (nextIndex < 0) {
-        nextIndex = images.length - 1;
-      } else if (nextIndex >= images.length) {
-        nextIndex = 0;
-      }
-      return nextIndex;
+    startTransition(() => {
+      setCurrentSlide((prev) => {
+        let nextIndex = prev + direction;
+        if (nextIndex < 0) {
+          nextIndex = images.length - 1;
+        } else if (nextIndex >= images.length) {
+          nextIndex = 0;
+        }
+        return nextIndex;
+      });
     });
   };
 
@@ -95,7 +115,7 @@ function PastProjectsPage() {
                 <button
                   key={category}
                   onClick={() => {
-                    setSelectedCategory(category);
+                    debouncedSetSelectedCategory(category); // Use debounced function here
                     setCurrentSlide(0);
                   }}
                   className={`rounded-full border-2 border-primary ${selectedCategory === category ? "bg-secondary font-bold" : "bg-background"} transition ease-in-out hover:cursor-pointer`}
@@ -114,7 +134,7 @@ function PastProjectsPage() {
               {...handlers}
             >
               <div
-                className="flex transition-transform duration-500 h-full"
+                className="flex h-full transition-transform duration-500"
                 style={{ transform: `translateX(-${currentSlide * 100}%)` }}
               >
                 {images.map((image, index) => (
@@ -136,7 +156,6 @@ function PastProjectsPage() {
               />
             </div>
           </div>
-
         </div>
         <Footer />
       </MenuProvider>
