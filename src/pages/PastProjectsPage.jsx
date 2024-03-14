@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, startTransition } from "react";
 import { useSwipeable } from "react-swipeable";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import NavBar from "../Layout/NavBar";
@@ -110,7 +110,7 @@ function PastProjectsPage() {
             <div className="pt-1 text-center font-text text-4xl font-bold tracking-tighter text-text">
               PAST PROJECTS
             </div>
-            <div className="grid grid-cols-2 gap-2 p-2 text-center font-text text-sm">
+            <div className="grid grid-cols-2 gap-2 p-2 text-center font-text text-sm lg:mx-[30%]">
               {Object.keys(categories).map((category) => (
                 <button
                   key={category}
@@ -118,7 +118,7 @@ function PastProjectsPage() {
                     debouncedSetSelectedCategory(category); // Use debounced function here
                     setCurrentSlide(0);
                   }}
-                  className={`rounded-full border-2 border-primary ${selectedCategory === category ? "bg-secondary font-bold" : "bg-background"} transition ease-in-out hover:cursor-pointer`}
+                  className={`rounded-full border-2 md:text-2xl border-primary ${selectedCategory === category ? "bg-secondary font-bold" : "bg-background"} transition ease-in-out hover:cursor-pointer`}
                 >
                   {category}
                 </button>
@@ -127,10 +127,9 @@ function PastProjectsPage() {
             <div className="ml-[5%] h-[1px] w-[90%] bg-black"></div>
           </div>
 
-          {/* Image Carousel */}
-          <div className="h-[75%]">
+          <div className="h-[75%] w-full flex justify-center">
             <div
-              className="relative m-2 h-full overflow-hidden rounded-3xl border-2 border-black"
+              className="relative m-2 h-full lg:w-1/2 overflow-hidden rounded-3xl border-2 border-black"
               {...handlers}
             >
               <div

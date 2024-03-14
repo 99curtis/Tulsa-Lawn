@@ -17,7 +17,7 @@ function Footer() {
   return (
     <div className="h-[145px] bg-text font-text text-background overflow-hidden">
       <div className="flex justify-between">
-        <div className="ml-1 ">
+        <div className="ml-1 md:ml-10 ">
           <div className="pt-4 text-2xl font-bold">Contact Us</div>
           <div className="text-sm">
             <a href="tel:999-999-9999" className="hover:underline">
@@ -32,9 +32,9 @@ function Footer() {
           </div>
         </div>
 
-        <div className="h-30 mt-4 w-[1px] bg-background"></div>
+        <div className="h-30 mt-4 w-[1px] bg-background md:hidden"></div>
 
-        <div className="mr-1 text-end ">
+        <div className="mr-1 text-end md:mr-10">
           <div className="pt-4 text-2xl font-bold">Connect</div>
           <div className="flex justify-end gap-3 pt-1 text-4xl">
             <div>
@@ -70,7 +70,7 @@ function Footer() {
       <div className="ml-[5%] mt-2 h-[1px] w-[90%] bg-background"></div>
 
       
-        <div className="flex items-center justify-around p-4 font-logo text-2xl" onClick={goToHomePage}>
+        <div className="flex items-center justify-around p-4 font-logo text-2xl hover:cursor-pointer" onClick={goToHomePage}>
           TULSA LAWN
         </div>
     </div>

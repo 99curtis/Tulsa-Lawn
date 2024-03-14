@@ -8,7 +8,7 @@ function AboutUsHeader() {
       </h1>
 
       
-      <div className="grid h-[25%] w-screen grid-cols-2 p-4 pt-6 text-center font-text leading-none text-text">
+      <div className="grid h-[25%] lg:h-[15%] w-screen grid-cols-2 lg:grid-cols-4 p-4 pt-6 text-center font-text leading-none text-text">
         <div className="">
           <div
             className="text-lg md:text-2xl font-bold"
@@ -69,9 +69,9 @@ function AboutUsHeader() {
       </div>
       <div
         style={{ backgroundImage: `url(${AboutUsHeaderImage})` }}
-        className="h-[30%] md:h-[45%] w-[90%] rounded-3xl bg-cover bg-center bg-no-repeat mb-8"
+        className="h-[30%] md:h-[45%] lg:h-[55%] lg:w-[40%] w-[90%] rounded-3xl bg-cover bg-center bg-no-repeat mb-8"
       ></div>
-      <div className="px-4 font-text font-bold md:text-lg">
+      <div className="px-4 font-text font-bold md:text-lg lg:px-[20%]">
         We have been doing it for over 20+ years, and will continue to provide
         nothing but the best quality service at the most competitive prices. No
         one treats the Tulsa Area's lawns better than us, and we strive prove it

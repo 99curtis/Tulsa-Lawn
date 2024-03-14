@@ -6,7 +6,7 @@ import LawnHeroBL from "/assets/LawnHeroBL.webp";
 
 function ServicesHero() {
   return (
-    <div className="relative h-[calc(100vh-5rem)] md:h-[70svh] overflow-hidden">
+    <div className="relative h-[calc(100vh-5rem)] md:h-[70svh] lg:h-[90svh] overflow-hidden">
       <div className="h-1/4 md:h-[15%] text-center font-text text-text pt-8">
         <div className="text-4xl font-bold tracking-tighter">SERVICES</div>
         <div className="leading-tight md:mx-4">
@@ -16,8 +16,8 @@ function ServicesHero() {
       </div>
 
 
-      <div className="inset-0 grid h-[70%] md:h-[90%] overflow-hidden relative">
-        <div className="grid h-full grid-cols-2 grid-rows-2 p-4 md:p-20">
+      <div className="inset-0 grid h-[70%] md:h-[90%] lg:h-[750px] overflow-hidden relative">
+        <div className="grid h-full grid-cols-2 grid-rows-2 p-4 md:p-20 lg:px-[30%]">
           {/* Background images */}
           <div
             style={{ backgroundImage: `url(${LawnHeroTL})` }}

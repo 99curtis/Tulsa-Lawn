@@ -37,8 +37,8 @@ function HedgeTrimmingService() {
 
   return (
     <div className="h-full overflow-hidden p-4 font-text text-text">
-      <div className="flex h-[13%] items-center justify-between text-3xl font-bold md:px-4">
-        <div className="h-full w-1/2">
+      <div className="flex h-[13%] items-center justify-between text-3xl font-bold md:px-4 lg:px-8">
+        <div className="h-full w-1/2 lg:text-4xl">
           Hedge
           Trimming
         </div>
@@ -51,8 +51,8 @@ function HedgeTrimmingService() {
         </div>
       </div>
 
-      <div className="flex h-[35%] flex-col justify-between rounded-3xl bg-background p-2 border-[1px] border-text md:mx-20">
-        <div className="px-2 leading-tight md:text-lg">
+      <div className="flex h-[35%] flex-col justify-between rounded-3xl bg-background p-2 border-[1px] border-text md:mx-20 lg:mx-[30%] lg:h-[20%]">
+        <div className="px-2 leading-tight md:text-lg"> 
           Our hedge trimming services offer precision and detail, sculpting your
           hedges to perfection. We enhance your landscape's natural beauty,
           creating an inviting and refined space for everyone to enjoy.
@@ -65,7 +65,8 @@ function HedgeTrimmingService() {
       <div className="flex h-[5%] items-end justify-center font-bold">
         past hedge trimming projects
       </div>
-      <div className="relative flex border-2 h-[45%] md:scale-90 border-black w-full overflow-hidden rounded-3xl" {...handlers}>
+      <div className="flex h-full w-full justify-center">
+      <div className="relative flex border-2 h-[45%] md:scale-90 lg:h-[60%] lg:w-[50%] border-black w-full overflow-hidden rounded-3xl" {...handlers}>
         <div className="flex transition-transform duration-500 h-full" style={{ transform: `translateX(${calculateOffset()})` }}>
           {images.map((image, index) => (
             <img
@@ -85,6 +86,7 @@ function HedgeTrimmingService() {
           onClick={() => setCurrentSlide((prev) => (prev + 1) % images.length)}
           className="absolute right-0 top-1/2 -translate-y-1/2 cursor-pointer rounded-full text-5xl bg-text bg-opacity-60 text-background"
         />
+      </div>
       </div>
     </div>
   );

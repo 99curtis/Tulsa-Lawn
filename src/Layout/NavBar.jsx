@@ -9,7 +9,7 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import MeetTheTeam from "/assets/MeetTheTeam@2x.jpg";
 import LawnExample from "/assets/LawnExample6@2x.jpg";
 
-import { Link } from "react-router-dom";
+
 import useDeferredNavigate from "../Components/deferredNavigate";
 
 function NavBar() {
@@ -22,7 +22,9 @@ function NavBar() {
   };
 
   const handleHomePageClick = () => {
-    toggleMenu();
+    if (isMenuVisible) {
+      toggleMenu();
+    }
     deferredNavigate("/");
   };
 
@@ -88,9 +90,9 @@ function NavBar() {
 
   return (
     <div className="relative w-screen">
-      <div className="flex h-20 items-center justify-between border-black px-4">
+      <div className="flex h-20 items-center justify-between px-4">
         <div onClick={handleHomePageClick}>
-          <div className="font-logo text-3xl font-bold text-primary">
+          <div className="font-logo text-3xl font-bold text-primary hover:cursor-pointer">
             Tulsa Lawn
           </div>
         </div>
@@ -122,10 +124,10 @@ function NavBar() {
  
 
         <div className="h-full">
-          <div className="grid h-2/5 grid-cols-2 gap-1 p-2">
+          <div className="grid h-2/5 grid-cols-2 gap-1 lg:grid-cols-4 p-2">
             <div
               style={isMenuVisible ? fallingStyle(750) : {}}
-              className="flex flex-col items-center justify-center rounded-3xl border-2 border-text bg-background"
+              className="flex flex-col items-center justify-center rounded-3xl border-2 border-text bg-background cursor-pointer"
               onClick={handleResidentialClick}
             >
               <div className="pt-1 text-center font-text text-base font-bold text-primary">
@@ -141,7 +143,7 @@ function NavBar() {
 
             <div
               style={isMenuVisible ? fallingStyle(750) : {}}
-              className="flex flex-col items-center justify-center rounded-3xl border-2 border-text bg-background"
+              className="flex flex-col items-center justify-center rounded-3xl border-2 border-text bg-background cursor-pointer"
               onClick={handleCommercialClick}
             >
               <div className="pt-1 text-center font-text text-base font-bold text-primary">
@@ -160,7 +162,7 @@ function NavBar() {
 
             <div
               style={isMenuVisible ? fallingStyle(900) : {}}
-              className="flex flex-col items-center justify-center rounded-3xl border-2 border-text bg-background"
+              className="flex flex-col items-center justify-center rounded-3xl border-2 border-text bg-background cursor-pointer"
               onClick={handleHedgeTrimmingClick}
             >
               <div className="pt-1 text-center font-text text-base font-bold text-primary">
@@ -176,7 +178,7 @@ function NavBar() {
 
             <div
               style={isMenuVisible ? fallingStyle(900) : {}}
-              className="flex flex-col items-center justify-center rounded-3xl border-2 border-text bg-background"
+              className="flex flex-col items-center justify-center rounded-3xl border-2 border-text bg-background cursor-pointer"
               onClick={handleLeafRemovalClick}
             >
               <div className="pt-1 text-center font-text text-base font-bold text-primary">
@@ -204,7 +206,7 @@ function NavBar() {
             className="mx-2 mt-2 grid h-1/4 grid-cols-2 gap-2"
           >
             <div
-              className="relative rounded-3xl"
+              className="relative rounded-3xl cursor-pointer"
               onClick={handlePastProjectsClick}
             >
               <div
@@ -222,7 +224,7 @@ function NavBar() {
               </div>
             </div>
             <div
-              className="relative rounded-3xl"
+              className="relative rounded-3xl cursor-pointer"
               onClick={handleAboutUsClick}
             >
               <div
