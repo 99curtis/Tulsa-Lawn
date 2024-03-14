@@ -11,7 +11,7 @@ function AboutUsHeader() {
       <div className="grid h-[25%] w-screen grid-cols-2 p-4 pt-6 text-center font-text leading-none text-text">
         <div className="">
           <div
-            className="text-lg font-bold"
+            className="text-lg md:text-2xl font-bold"
             style={{
               background: "linear-gradient(to right, #403d39, #0B6530)", // Gradient background
               WebkitBackgroundClip: "text", // Vendor prefix for Safari
@@ -21,11 +21,11 @@ function AboutUsHeader() {
           >
             120+ Homes
           </div>
-          <div>mowed monthly</div>
+          <div className="md:text-lg">mowed monthly</div>
         </div>
         <div className="">
           <div
-            className="text-lg font-bold"
+            className="text-lg md:text-2xl font-bold"
             style={{
               background: "linear-gradient(to right, #403d39, #0B6530)", // Gradient background
               WebkitBackgroundClip: "text", // Vendor prefix for Safari
@@ -35,11 +35,11 @@ function AboutUsHeader() {
           >
             20+ Businesses
           </div>
-          <div>managed weekly</div>
+          <div className="md:text-lg">managed weekly</div>
         </div>
         <div className="">
           <div
-            className="text-lg font-bold"
+            className="text-lg md:text-2xl font-bold"
             style={{
               background: "linear-gradient(to right, #403d39, #0B6530)", // Gradient background
               WebkitBackgroundClip: "text", // Vendor prefix for Safari
@@ -49,11 +49,11 @@ function AboutUsHeader() {
           >
             5+ tons
           </div>
-          <div>leaves removed</div>
+          <div className="md:text-lg">leaves removed</div>
         </div>
         <div className="">
           <div
-            className="text-lg font-bold"
+            className="text-lg md:text-2xl font-bold"
             style={{
               background: "linear-gradient(to right, #403d39, #0B6530)", // Gradient background
               WebkitBackgroundClip: "text", // Vendor prefix for Safari
@@ -63,15 +63,15 @@ function AboutUsHeader() {
           >
             1000+ hedges
           </div>
-          <div>trimmed and crafted</div>
+          <div className="md:text-lg">trimmed and crafted</div>
         </div>
         
       </div>
       <div
         style={{ backgroundImage: `url(${AboutUsHeaderImage})` }}
-        className="h-[30%] w-[90%] rounded-3xl bg-cover bg-center bg-no-repeat mb-8"
+        className="h-[30%] md:h-[45%] w-[90%] rounded-3xl bg-cover bg-center bg-no-repeat mb-8"
       ></div>
-      <div className="px-4 font-text font-bold">
+      <div className="px-4 font-text font-bold md:text-lg">
         We have been doing it for over 20+ years, and will continue to provide
         nothing but the best quality service at the most competitive prices. No
         one treats the Tulsa Area's lawns better than us, and we strive prove it
