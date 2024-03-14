@@ -37,11 +37,9 @@ function LeafRemovalService() {
 
   return (
     <div className="h-full overflow-hidden p-4 font-text text-text">
-      {/* Header and Icon */}
-      <div className="flex h-[13%] items-center justify-between text-3xl font-bold">
+      <div className="flex h-[13%] items-center justify-between text-3xl font-bold md:px-4">
         <div className="h-full w-1/2">
           Leaf
-          <br />
           Removal
         </div>
         <div className="flex h-full w-1/2 justify-end bg-contain">
@@ -49,12 +47,11 @@ function LeafRemovalService() {
         </div>
       </div>
 
-      {/* Service Description */}
-      <div className="flex h-[35%] flex-col justify-between rounded-3xl p-2 border-[1px] border-text bg-secondary">
-        <div className="px-2 leading-tight">
+      <div className="flex h-[35%] flex-col justify-between rounded-3xl p-2 border-[1px] border-text bg-secondary md:mx-20">
+        <div className="px-2 leading-tight md:text-lg">
           Efficiently clear your outdoor spaces of leaf clutter with our leaf removal service. Our fast and thorough approach enhances your lawn's beauty and health, ensuring a pristine environment for you and your guests.
         </div>
-        <div className="text-center text-xs font-bold">
+        <div className="text-center text-xs md:text-base font-bold">
           Pricing starts at $50/yard or $150/lot
         </div>
       </div>
@@ -65,7 +62,7 @@ function LeafRemovalService() {
       </div>
 
       {/* Image Carousel */}
-      <div className="relative flex border-2 h-[45%] border-black w-full overflow-hidden rounded-3xl" {...handlers}>
+      <div className="relative flex border-2 h-[45%] md:scale-90 border-black w-full overflow-hidden rounded-3xl" {...handlers}>
         <div className="flex transition-transform duration-500 h-full" style={{ transform: `translateX(${calculateOffset()})` }}>
           {images.map((image, index) => (
             <img key={index} src={image} alt={`Leaf Removal ${index + 1}`} className="h-full w-full object-cover flex-shrink-0" />

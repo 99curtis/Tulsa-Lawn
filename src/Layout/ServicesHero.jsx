@@ -6,18 +6,18 @@ import LawnHeroBL from "/assets/LawnHeroBL.webp";
 
 function ServicesHero() {
   return (
-    <div className="relative h-[calc(100vh-5rem)] overflow-hidden">
-      <div className="h-1/4 text-center font-text text-text pt-8">
+    <div className="relative h-[calc(100vh-5rem)] md:h-[70svh] overflow-hidden">
+      <div className="h-1/4 md:h-[15%] text-center font-text text-text pt-8">
         <div className="text-4xl font-bold tracking-tighter">SERVICES</div>
-        <div className="leading-tight">
+        <div className="leading-tight md:mx-4">
           From residential and commerical lawn care, to leaf removal and hedge
           trimming, we've done it all in the Tulsa area for 20 years
         </div>
       </div>
 
 
-      <div className="inset-0 grid h-[70%] overflow-hidden relative">
-        <div className="grid h-full grid-cols-2 grid-rows-2 p-4">
+      <div className="inset-0 grid h-[70%] md:h-[90%] overflow-hidden relative">
+        <div className="grid h-full grid-cols-2 grid-rows-2 p-4 md:p-20">
           {/* Background images */}
           <div
             style={{ backgroundImage: `url(${LawnHeroTL})` }}

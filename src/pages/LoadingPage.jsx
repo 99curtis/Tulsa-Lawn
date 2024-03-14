@@ -4,7 +4,7 @@ import { MenuProvider } from "../Components/MenuContext";
 
 function LandingPage() {
   return (
-    <div className="flex h-screen max-h-screen w-screen flex-col justify-between bg-background">
+    <div className="flex h-screen max-h-screen w-screen flex-col justify-between bg-background overflow-hidden">
       <MenuProvider>
         <NavBar />
         <div className="flex flex-grow items-center justify-center">

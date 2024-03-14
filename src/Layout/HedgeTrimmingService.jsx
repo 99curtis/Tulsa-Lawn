@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useSwipeable } from "react-swipeable";
-import LazyLoad from "react-lazy-load";
 
 import LawnExample1 from "/assets/hedgetrimming1.webp";
 import LawnExample2 from "/assets/hedgetrimming2.webp";
@@ -38,10 +37,9 @@ function HedgeTrimmingService() {
 
   return (
     <div className="h-full overflow-hidden p-4 font-text text-text">
-      <div className="flex h-[13%] items-center justify-between text-3xl font-bold">
+      <div className="flex h-[13%] items-center justify-between text-3xl font-bold md:px-4">
         <div className="h-full w-1/2">
           Hedge
-          <br />
           Trimming
         </div>
         <div className="flex h-full w-1/2 justify-end bg-contain">
@@ -53,13 +51,13 @@ function HedgeTrimmingService() {
         </div>
       </div>
 
-      <div className="flex h-[35%] flex-col justify-between rounded-3xl bg-background p-2 border-[1px] border-text">
-        <div className="px-2 leading-tight">
+      <div className="flex h-[35%] flex-col justify-between rounded-3xl bg-background p-2 border-[1px] border-text md:mx-20">
+        <div className="px-2 leading-tight md:text-lg">
           Our hedge trimming services offer precision and detail, sculpting your
           hedges to perfection. We enhance your landscape's natural beauty,
           creating an inviting and refined space for everyone to enjoy.
         </div>
-        <div className="text-center text-xs font-bold">
+        <div className="text-center text-xs md:text-base font-bold">
           Pricing starts at $60/lot or $50/monthly
         </div>
       </div>
@@ -67,7 +65,7 @@ function HedgeTrimmingService() {
       <div className="flex h-[5%] items-end justify-center font-bold">
         past hedge trimming projects
       </div>
-      <div className="relative flex border-2 h-[45%] border-black w-full overflow-hidden rounded-3xl" {...handlers}>
+      <div className="relative flex border-2 h-[45%] md:scale-90 border-black w-full overflow-hidden rounded-3xl" {...handlers}>
         <div className="flex transition-transform duration-500 h-full" style={{ transform: `translateX(${calculateOffset()})` }}>
           {images.map((image, index) => (
             <img
